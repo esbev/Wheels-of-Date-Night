@@ -9,83 +9,86 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.0.1-alpha/dist/css/materialize.min.css">
-    <link rel="stylesheet" type="txt/css" href="./assets/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css"/>
 	<title>WoDN: Dinner and a Movie generator</title>
   </head>
 
-  <body>
-    <header>
-    	<h1>The Wheels of Date Night!</h1>
-    </header>
-    <div class="container1">
-        <div class="spinBtn1">Spin</div>
-        <div class="wheel1">
-            <div class="genre" style="--i:1;--clr:#db7093;">
-                <span>Horror</span></div>
-            <div class="genre" style="--i:2;--clr:#20b2aa;">
-                <span>Action</span></div>
-            <div class="genre" style="--i:3;--clr:#daa520;">
-                <span>Comedy</span></div>
-            <div class="genre" style="--i:4;--clr:#ff340f;">
-                <span>Romance</span></div>
-            <div class="genre" style="--i:5;--clr:#4169e1;">
-                <span>Sci-Fi</span></div>
-            <div class="genre" style="--i:6;--clr:#3cb371;">
-                <span>Thriller</span></div>
-            <div class="genre" style="--i:7;--clr:#d63e92;">
-                <span>Adventure</span></div>
-            <div class="genre" style="--i:8;--clr:#ff7f50;">
-                <span>Family</span></div>
-            <div class="genre" style="--i:9;--clr:#044811;">
-                <span>Mystery</span></div>
-            <div class="genre" style="--i:10;--clr:#b667d8;">
-                <span>Drama</span></div>
-    </div>
-    <script>
-        let wheel1 = document.querySelector('.wheel1');
-        let spinBtn1 = document.querySelector('.spinBtn1');
+<body>
+  <header>
+    <h1>The Wheels of Date Night!</h1>
+  </header>
 
-        spinBtn1.onclick = function(){
-            let value = Math.ceil(Math.random() * 3600);
-            wheel1.style.transform = "rotate(" +value + "deg)"
-            value += Math.ceil(Math.random() * 6600);
-        }
-    </script>
-    <div class="container2">
-        <div class="spinBtn2">Spin</div>
-        <div class="wheel2">
-            <div class="cuisine" style="--i:1;--clr:#db7093;">
-                <span>Italian</span></div>
-            <div class="cuisine" style="--i:2;--clr:#20b2aa;">
-                <span>American</span></div>
-            <div class="cuisine" style="--i:3;--clr:#daa520;">
-                <span>Thai</span></div>
-            <div class="cuisine" style="--i:4;--clr:#ff340f;">
-                <span>Chinese</span></div>
-            <div class="cuisine" style="--i:5;--clr:#4169e1;">
-                <span>Caribbean</span></div>
-            <div class="cuisine" style="--i:6;--clr:#3cb371;">
-                <span>Greek</span></div>
-            <div class="cuisine" style="--i:7;--clr:#d63e92;">
-                <span>Spanish</span></div>
-            <div class="cuisine" style="--i:8;--clr:#ff7f50;">
-                <span>French</span></div>
-            <div class="cuisine" style="--i:9;--clr:#044811;">
-                <span>Japanese</span></div>
-            <div class="cuisine" style="--i:10;--clr:#b667d8;">
-                <span>Indian</span></div>
-    </div>
-    <script>
-        let wheel2 = document.querySelector('.wheel2');
-        let spinBtn2 = document.querySelector('.spinBtn2');
+  <div class="container1">
+    <div class="spinBtn1">Spin</div>
+    <div class="wheel1">
+      <div class="genre" style="--i:1;--clr:#db7093;">
+        <span>Horror</span></div>
+      <div class="genre" style="--i:2;--clr:#20b2aa;">
+        <span>Action</span></div>
+      <div class="genre" style="--i:3;--clr:#daa520;">
+        <span>Comedy</span></div>
+      <div class="genre" style="--i:4;--clr:#ff340f;">
+        <span>Romance</span></div>
+      <div class="genre" style="--i:5;--clr:#4169e1;">
+        <span>Sci-Fi</span></div>
+      <div class="genre" style="--i:6;--clr:#3cb371;">
+        <span>Thriller</span></div>
+      <div class="genre" style="--i:7;--clr:#d63e92;">
+        <span>Adventure</span></div>
+      <div class="genre" style="--i:8;--clr:#ff7f50;">
+        <span>Family</span></div>
+      <div class="genre" style="--i:9;--clr:#044811;">
+        <span>Mystery</span></div>
+      <div class="genre" style="--i:10;--clr:#b667d8;">
+        <span>Drama</span></div>
+  </div>
 
-        spinBtn2.onclick = function(){
-            let value = Math.ceil(Math.random() * 3600);
-            wheel2.style.transform = "rotate(" +value + "deg)"
-            value += Math.ceil(Math.random() * 6600);
-        }
-    </script>
-      <label for="genres">Movie Genres</label>
+  <div class="container2">
+    <div class="spinBtn2">Spin</div>
+    <div class="wheel2">
+      <div class="cuisine" style="--i:1;--clr:#db7093;">
+        <span>Italian</span></div>
+      <div class="cuisine" style="--i:2;--clr:#20b2aa;">
+        <span>American</span></div>
+      <div class="cuisine" style="--i:3;--clr:#daa520;">
+        <span>Thai</span></div>
+      <div class="cuisine" style="--i:4;--clr:#ff340f;">
+        <span>Chinese</span></div>
+      <div class="cuisine" style="--i:5;--clr:#4169e1;">
+        <span>Caribbean</span></div>
+      <div class="cuisine" style="--i:6;--clr:#3cb371;">
+        <span>Greek</span></div>
+      <div class="cuisine" style="--i:7;--clr:#d63e92;">
+        <span>Spanish</span></div>
+      <div class="cuisine" style="--i:8;--clr:#ff7f50;">
+        <span>French</span></div>
+      <div class="cuisine" style="--i:9;--clr:#044811;">
+        <span>Japanese</span></div>
+      <div class="cuisine" style="--i:10;--clr:#b667d8;">
+        <span>Indian</span></div>
+  </div>
+  <div>
+    <label for="cuisine">Food Cuisine</label>
+    <select id="cuisine" class="browser-default">
+      <option value="" disabled selected>Pick a food cuisine</option>
+      <option value="">Chinese</option>
+      <option value="">Italian</option>
+      <option value="">French</option>
+      <option value="">Indian</option>
+      <option value="">Mediterranean</option>
+      <option value="">Mexican</option>
+      <option value="">Japanese</option>
+      <option value="">American</option>
+    </select>
+  </div>
+  <div>
+    <a id="foodBtn" class="waves-effect waves-light btn-small">Select</a>
+  </div>
+  <div>
+    <form id="food-list"></form>
+  </div>
+  <div>
+    <label for="genres">Movie Genres</label>
 			<select id="genres" class="browser-default">
         <option value="" disabled selected>Pick a genre</option>
 				<option value="28">Action</option>
@@ -99,32 +102,54 @@
 				<option value="878">Science Fiction</option>
 				<option value="53">Thriller</option>
 			</select>
-
-    <div>
-        <a id="selectBtn" class="waves-effect waves-light btn-small">Select</a>
     </div>
-
-		<div>
-			<form id="movie-list"></form>
-		</div>
-	</div>
-
-	<div>
-        <button id="saveBtn" class="waves-effect waves-light btn-small disabled">Save</button>
+  <div>
+    <a id="selectBtn" class="waves-effect waves-light btn-small">Select</a>
   </div>
-  <div id="saved-list"></div>
+	<div>
+		<form id="movie-list"></form>
+	</div>
+	<div>
+    <button id="saveBtn" class="waves-effect waves-light btn-small disabled">Save</button>
+  </div>
+
+  <div id="saved-list">
+
+  </div>
 
   <div>
-        <button id="clearBtn" class="waves-effect waves-light btn-small">Clear</button>
+    <button id="clearBtn" class="waves-effect waves-light btn-small">Clear</button>
   </div>
 
     <!--JavaScript at end of body for optimized loading-->
-    <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.0.1-alpha/dist/js/materialize.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-    crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./assets/js/script.js"></script>
+  <script>
+    let wheel1 = document.querySelector('.wheel1');
+    let spinBtn1 = document.querySelector('.spinBtn1');
+
+    spinBtn1.onclick = function(){
+        let value = Math.ceil(Math.random() * 3600);
+        wheel1.style.transform = "rotate(" +value + "deg)"
+        value += Math.ceil(Math.random() * 6600);
+    }
+  </script>
+  <script>
+    let wheel2 = document.querySelector('.wheel2');
+    let spinBtn2 = document.querySelector('.spinBtn2');
+
+    spinBtn2.onclick = function(){
+        let value = Math.ceil(Math.random() * 3600);
+        wheel2.style.transform = "rotate(" +value + "deg)"
+        value += Math.ceil(Math.random() * 6600);
+    }
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.0.1-alpha/dist/js/materialize.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+  integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="./assets/js/script.js"></script>
 
   </body>
 </html>
