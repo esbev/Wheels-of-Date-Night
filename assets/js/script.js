@@ -6,9 +6,16 @@
 //     const getFoodApi = fetch(api);
 //     return getFoodApi;
 // }
-const today = dayjs().format("MMM D, YYYY");
+
+//-------------movie variables
+// const today = dayjs().format("MMM D, YYYY");
 var dishPlaceHolder = "Yummy Food";
-var previousDates = [];
+var theDate = [];
+//-------------wheel variables
+let wheel1 = document.querySelector('.wheel1');
+let spinBtn1 = document.querySelector('.spinBtn1');
+let wheel2 = document.querySelector('.wheel2');
+let spinBtn2 = document.querySelector('.spinBtn2');
 
 function initialize() {
   loadPreviousDates();
@@ -31,7 +38,6 @@ function fetchMovies(genreID) {
     }
   })
   .then(function(data) {
-    //log the list in console
     createMovieSuggestions(data);
   })
 }
@@ -73,46 +79,59 @@ function buildMovieList(movies) {
 }
 
 function save() {
-  var newDate = [];
   var selectedMovie = ($('input[name=movie]:checked').val());
   $("#movie-list").empty();
 
-//convert this to table elements
+//to do: convert this to table elements
   var addDateEl ="";
-  addDateEl += '<p>' + today + ', ' + dishPlaceHolder + ', ' + selectedMovie + '</p>';
+  //issue: localstorage won't save more than one entry if there are 3 or more items in the array pushed
+  // addDateEl += '<p>' + today + ', ' + dishPlaceHolder + ', ' + selectedMovie + '</p>';
+  addDateEl += '<p>' + dishPlaceHolder + ', ' + selectedMovie + '</p>';
   $("#saved-list").append(addDateEl);
 
-  var theDate = {
-    date: today,
+  var newDate = {
+    // date: today, because localstorage doesn't like 3 items
     dish: dishPlaceHolder,
     movie: selectedMovie
   }
   
-  newDate.push(theDate);
-  localStorage.setItem("dates", JSON.stringify(newDate));
+  theDate.push(newDate);
+  console.log(theDate);
+  localStorage.setItem("dates", JSON.stringify(theDate));
   console.log(localStorage);
   $("#saveBtn").addClass("disabled");
-  //to do: save cuisine and movie to localstorage and list for previous dates history
 }
 
 function clear() {
   $("#saved-list").empty();
+  theDate = [];
   localStorage.clear();
 }
 
 function loadPreviousDates() {
-  // console.log(localStorage);
-  // previousDates = JSON.parse(window.localStorage.getItem("dates"));
-  // console.log(previousDates);
-  // for (i in previousDates) {
-  //   var addDateEl = "";
-  //   addDateEl += '<p>' + previousDates[i].date + ', ' + previousDates[i].dish + ', ' + previousDates[i].movie + '</p>';
-  //   $("#saved-list").append(addDateEl);
-  // }
-}
+  var previousDates = JSON.parse(window.localStorage.getItem("dates"));
 
+  for (i in previousDates) {
+    var addDateEl = "";
+    //issue: localstorage won't save more than one entry if there are 3 or more items in the array pushed
+    // addDateEl += '<p>' + previousDates[i].date + ', ' + previousDates[i].dish + ', ' + previousDates[i].movie + '</p>';
+    addDateEl += '<p>' + previousDates[i].dish + ', ' + previousDates[i].movie + '</p>';
+    $("#saved-list").append(addDateEl);
+  }
+}
 
 initialize();
 $("#selectBtn").click(fetchMovies);
 $("#saveBtn").click(save);
 $("#clearBtn").click(clear);
+
+spinBtn1.onclick = function(){
+    let value = Math.ceil(Math.random() * 3600);
+    wheel1.style.transform = "rotate(" + value + "deg)"
+    value += Math.ceil(Math.random() * 6600);
+}
+spinBtn2.onclick = function(){
+    let value = Math.ceil(Math.random() * 3600);
+    wheel2.style.transform = "rotate(" + value + "deg)"
+    value += Math.ceil(Math.random() * 6600);
+}
