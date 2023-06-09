@@ -17,7 +17,74 @@
     <header>
     	<h1>The Wheel of Date Night!</h1>
     </header>
+    <div class="container1">
+        <div class="spinBtn1">Spin</div>
+        <div class="wheel1">
+            <div class="genre" style="--i:1;--clr:#db7093;">
+                <span>Horror</span></div>
+            <div class="genre" style="--i:2;--clr:#20b2aa;">
+                <span>Action</span></div>
+            <div class="genre" style="--i:3;--clr:#daa520;">
+                <span>Comedy</span></div>
+            <div class="genre" style="--i:4;--clr:#ff340f;">
+                <span>Romance</span></div>
+            <div class="genre" style="--i:5;--clr:#4169e1;">
+                <span>Sci-Fi</span></div>
+            <div class="genre" style="--i:6;--clr:#3cb371;">
+                <span>Thriller</span></div>
+            <div class="genre" style="--i:7;--clr:#d63e92;">
+                <span>Adventure</span></div>
+            <div class="genre" style="--i:8;--clr:#ff7f50;">
+                <span>Family</span></div>
+            <div class="genre" style="--i:9;--clr:#044811;">
+                <span>Mystery</span></div>
+            <div class="genre" style="--i:10;--clr:#b667d8;">
+                <span>Drama</span></div>
+    </div>
+    <script>
+        let wheel1 = document.querySelector('.wheel1');
+        let spinBtn1 = document.querySelector('.spinBtn1');
 
+        spinBtn1.onclick = function(){
+            let value = Math.ceil(Math.random() * 3600);
+            wheel1.style.transform = "rotate(" +value + "deg)"
+            value += Math.ceil(Math.random() * 6600);
+        }
+    </script>
+    <div class="container2">
+        <div class="spinBtn2">Spin</div>
+        <div class="wheel2">
+            <div class="cuisine" style="--i:1;--clr:#db7093;">
+                <span>Italian</span></div>
+            <div class="cuisine" style="--i:2;--clr:#20b2aa;">
+                <span>American</span></div>
+            <div class="cuisine" style="--i:3;--clr:#daa520;">
+                <span>Thai</span></div>
+            <div class="cuisine" style="--i:4;--clr:#ff340f;">
+                <span>Chinese</span></div>
+            <div class="cuisine" style="--i:5;--clr:#4169e1;">
+                <span>Caribbean</span></div>
+            <div class="cuisine" style="--i:6;--clr:#3cb371;">
+                <span>Greek</span></div>
+            <div class="cuisine" style="--i:7;--clr:#d63e92;">
+                <span>Spanish</span></div>
+            <div class="cuisine" style="--i:8;--clr:#ff7f50;">
+                <span>French</span></div>
+            <div class="cuisine" style="--i:9;--clr:#044811;">
+                <span>Japanese</span></div>
+            <div class="cuisine" style="--i:10;--clr:#b667d8;">
+                <span>Indian</span></div>
+    </div>
+    <script>
+        let wheel2 = document.querySelector('.wheel2');
+        let spinBtn2 = document.querySelector('.spinBtn2');
+
+        spinBtn2.onclick = function(){
+            let value = Math.ceil(Math.random() * 3600);
+            wheel2.style.transform = "rotate(" +value + "deg)"
+            value += Math.ceil(Math.random() * 6600);
+        }
+    </script>
       <label for="genres">Movie Genres</label>
 			<select id="genres" class="browser-default">
         <option value="" disabled selected>Pick a genre</option>
