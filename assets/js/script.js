@@ -6,6 +6,13 @@
 //     const getFoodApi = fetch(api);
 //     return getFoodApi;
 // }
+const today = dayjs().format("MMM D, YYYY");
+var dishPlaceHolder = "Yummy Food";
+var previousDates = [];
+
+function initialize() {
+  loadPreviousDates();
+}
 
 function fetchMovies(genreID) {
   const TMDBApiKey = "2f83b0344ec435557ea893d6df97bbfa";
@@ -47,38 +54,65 @@ function createMovieSuggestions(data) {
 }
 
 function buildMovieList(movies) {
-  //displays the list of movies for our user to choose from, sets first listed movie as default checked
-$("#movie-list").empty();
-for (i in movies) {
-  var addRadioBtn = "";
-  addRadioBtn += '<p><label>';
-  if (i == 0) {
-    addRadioBtn += '<input name="movie" type="radio" value="' + movies[i] + '"checked/>';
-  } else {
-    addRadioBtn += '<input name="movie" type="radio" value="' + movies[i] + '"/>';
+    //displays the list of movies for our user to choose from, sets first listed movie as default checked
+  $("#movie-list").empty();
+  for (i in movies) {
+    var addRadioBtn = "";
+    addRadioBtn += '<p><label>';
+    if (i == 0) {
+      addRadioBtn += '<input name="movie" type="radio" value="' + movies[i] + '"checked/>';
+    } else {
+      addRadioBtn += '<input name="movie" type="radio" value="' + movies[i] + '"/>';
+    }
+    addRadioBtn += '<span>' + movies[i] + '</span>';
+    addRadioBtn += '</label></p>'
+    $("#movie-list").append(addRadioBtn);
   }
-  addRadioBtn += '<span>' + movies[i] + '</span>';
-  addRadioBtn += '</label></p>'
-  $("#movie-list").append(addRadioBtn);
-}
-return;
+  $("#saveBtn").removeClass("disabled");
+  return;
 }
 
 function save() {
+  var newDate = [];
   var selectedMovie = ($('input[name=movie]:checked').val());
-  var addEl = '<p>' + selectedMovie + '</p>';
-  $("#saved-list").append(addEl);
   $("#movie-list").empty();
 
-  //to do: save cuisine and movie to localstorage and list for previous dates history
+//convert this to table elements
+  var addDateEl ="";
+  addDateEl += '<p>' + today + ', ' + dishPlaceHolder + ', ' + selectedMovie + '</p>';
+  $("#saved-list").append(addDateEl);
+
+  var theDate = {
+    date: today,
+    dish: dishPlaceHolder,
+    movie: selectedMovie
+  }
   
+  newDate.push(theDate);
+  localStorage.setItem("dates", JSON.stringify(newDate));
+  console.log(localStorage);
+  $("#saveBtn").addClass("disabled");
+  //to do: save cuisine and movie to localstorage and list for previous dates history
 }
 
 function clear() {
   $("#saved-list").empty();
-// to do: clear local storage and clear saved list
+  localStorage.clear();
 }
 
-$("#genreBtn").click(fetchMovies);
+function loadPreviousDates() {
+  // console.log(localStorage);
+  // previousDates = JSON.parse(window.localStorage.getItem("dates"));
+  // console.log(previousDates);
+  // for (i in previousDates) {
+  //   var addDateEl = "";
+  //   addDateEl += '<p>' + previousDates[i].date + ', ' + previousDates[i].dish + ', ' + previousDates[i].movie + '</p>';
+  //   $("#saved-list").append(addDateEl);
+  // }
+}
+
+
+initialize();
+$("#selectBtn").click(fetchMovies);
 $("#saveBtn").click(save);
 $("#clearBtn").click(clear);
