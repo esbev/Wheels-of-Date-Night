@@ -121,29 +121,6 @@
     <button id="clearBtn" class="waves-effect waves-light btn-small">Clear</button>
   </div>
 
-    <!--JavaScript at end of body for optimized loading-->
-  <script>
-    let wheel1 = document.querySelector('.wheel1');
-    let spinBtn1 = document.querySelector('.spinBtn1');
-
-    spinBtn1.onclick = function(){
-        let value = Math.ceil(Math.random() * 3600);
-        wheel1.style.transform = "rotate(" +value + "deg)"
-        value += Math.ceil(Math.random() * 6600);
-    }
-  </script>
-  <script>
-    let wheel2 = document.querySelector('.wheel2');
-    let spinBtn2 = document.querySelector('.spinBtn2');
-
-    spinBtn2.onclick = function(){
-        let value = Math.ceil(Math.random() * 3600);
-        wheel2.style.transform = "rotate(" +value + "deg)"
-        value += Math.ceil(Math.random() * 6600);
-    }
-  </script>
-
-
   <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.0.1-alpha/dist/js/materialize.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
   integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
