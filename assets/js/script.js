@@ -1,11 +1,3 @@
-// const edamamApiId = "86f4703b"
-// const edamamApiKey = "857c62167ca70205938be7d4c0ea9e22"
-
-// function getAutocompleteFood() {
-//   const api = "https://api.edamam.com/api/recipes/v2?type=any&app_id=" + edamamApiId + "&app_key=" + edamamApiKey + "&cuisineType=Italian";
-//     const getFoodApi = fetch(api);
-//     return getFoodApi;
-// }
 
 //-------------movie variables
 var dishPlaceHolder = "Yummy Food";
@@ -18,6 +10,60 @@ let spinBtn2 = document.querySelector('.spinBtn2');
 
 function initialize() {
   loadPreviousDates();
+}
+
+function fetchFood() {
+  var cuisineID = $("#cuisine").val();
+  var spoonApiKey = "7a94090b0a5346439ced2e2654e068d9";
+  var foodList = 5;
+  const foodApi = "https://api.spoonacular.com/recipes/complexSearch?apiKey=" + spoonApiKey + "&cuisine=" + cuisineID + "&number=" + foodList + "";
+  fetch(foodApi)
+    .then(function(response) {
+      console.log(response)
+      if (response.status === 404) {
+          console.log("404");
+          return;
+      } else {
+          return response.json();
+      }
+    })
+    .then(function(data) {
+      createFoodSuggestions(data);
+    })
+  console.log(foodApi)
+  }
+
+function createFoodSuggestions(data) {
+  var foodSuggestions = [];
+  // chooses 5 random foods with no duplicates
+  while (foodSuggestions.length < 5) {
+    var randomFoodOption = Math.floor(Math.random() * data.results.length);
+    var newFood = data.results[randomFoodOption].title;
+  if (!foodSuggestions.includes(newFood)) {
+    foodSuggestions.push(newFood);
+    }
+  }
+  buildFoodList(foodSuggestions);
+}
+
+
+function buildFoodList(food) {
+  //displays the list of movies for our user to choose from, sets first listed movie as default selected
+$("#food-list").empty();
+for (var i = 0; i < food.length; i++) {
+  var addRadioBtn = "";
+  addRadioBtn += '<p><label>';
+  if (i == 0) {
+    addRadioBtn += '<input name="title" type="radio" value="' + food[i] + '"checked/>';
+  } else {
+    addRadioBtn += '<input name="title" type="radio" value="' + food[i] + '"/>';
+  }
+  addRadioBtn += '<span>' + food[i] + '</span>';
+  addRadioBtn += '</label></p>'
+  $("#food-list").append(addRadioBtn);
+}
+$("#saveBtn").removeClass("disabled");
+// return;
 }
 
 function fetchMovies(genreID) {
@@ -116,6 +162,7 @@ function loadPreviousDates() {
 }
 
 initialize();
+$("#cuisine").click(fetchFood);
 $("#genres").change(fetchMovies);
 $("#saveBtn").click(save);
 $("#clearBtn").click(clear);
