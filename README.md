@@ -2,7 +2,7 @@
 
 ## Description
 
-write description here
+The Wheels of Date Night provide a user friendly way to quickly get new ideas for food and movies for any style of date. The Wheels of Date Night is easy and fun to use; the user needs to simply click the spin button and the fun begins. Two wheels are presented and once the spin button is clicked the wheels will spin. One wheel has random food cuisines and the other wheel has random film genres. Once the wheels come to a stop there is a pointer that will indicate to the user which choice each wheel has chosen. Below the wheels are 5 dishes and 5 movies generated in a list for the user to choose from. The user only needs to choose a dish and a movie from the lists and click the save button. This will save the user's input then list the 2 choices combined as a previous date. The food and movie lists will get cleared and the wheels are ready for another spin if the user desires. All previously saved dates will auto populate in the "Previous dates list" on user return to the site. You just took a simple dinner and a movie and made it exciting. Good luck and enjoy your date.
 
 ## Table of Contents
 - [Website Preview](#website-preview)
@@ -14,6 +14,8 @@ write description here
     - [Technologies Used](#technologies-used)
     - [Tasks](#tasks)
     - [Challenges Encountered](#challenges-encountered)
+        - [The Food API](#the-food-api)
+        - [Wheel value capture](#wheel-value-capture)
     - [Successes in Development](#successes-in-development)
 - [Future Development](#future-development)
 - [Credits](#credits)
@@ -32,55 +34,43 @@ write description here
 
 - ### User Story
 
-    AS A romantic couple
+        AS A romantic couple
+        I WANT to get unique ideas for dinner and a movie
+        SO THAT I can plan a quick and spontaneous date night
+        GIVEN a pair of spinner wheels and a spin button
 
-    I WANT to get unique ideas for dinner and a movie
+- ### Acceptance Criteria
 
-    SO THAT I can plan a quick and spontaneous date night
-
-    GIVEN a pair of spinner wheels and a spin button
-
-    WHEN I click on the spin button
-
-    THEN I am presented with two spinning wheels
-
-    WHEN I view the wheels stop
-
-    THEN I am presented with a random cuisine type and a random film genre
-
-    WHEN I am presented with a random cuisine type and a random film genre
-
-    THEN I am automatically presented with 5 random dishes from the cuisine type and 5 random movies from the film genre
-
-    WHEN I click on a dish and a movie
-
-    THEN I am presented with a save button
-
-    WHEN I click the save button
-
-    THEN I am presented with a list of saved date nights with my food and movie selections, and the dish and movie lists clear
-
-    WHEN I comeback to the page
-
-    THEN I can view all previously saved date nights
+        WHEN I click on the spin button
+        THEN I am presented with two spinning wheels
+        WHEN I view the wheels stop
+        THEN I am presented with a random cuisine type and a random film genre
+        WHEN I am presented with a random cuisine type and a random film genre
+        THEN I am automatically presented with 5 random dishes from the cuisine type and 5 random movies from the film genre
+        WHEN I click on a dish and a movie
+        THEN I am presented with a save button
+        WHEN I click the save button
+        THEN I am presented with a list of saved date nights with my food and movie selections, and the dish and movie lists clear
+        WHEN I comeback to the page
+        THEN I can view all previously saved date nights
 
 - ### Motivation and Development
 
     - #### Motivation / One-minute-pitch
 
-        Everyone has their comfort food, their regular dishes they cook, their regular restaurants, their favorite items on a menu they choose every single time, their regular TV shows, their regular channels they watch, those same old movies they watch again and again and again. Unfortunately date nights are not immune to these iterative default parameters as well.
+            Everyone has their comfort food, their regular dishes they cook, their regular restaurants, their favorite items on a menu they choose every single time, their regular TV shows, their regular channels they watch, those same old movies they watch again and again and again. Unfortunately date nights are not immune to these default parameters as well.
 
-        But nevertheless you suddenly find yourself with a evening alone with your signifcant other but you don't have time to plan a big date. So it looks like your going to have to settle for another thoughtless, monotonous, boring, tasteless "Dinner and a Movie."
+            But nevertheless you find yourself again with a evening alone with your signifcant other but you don't have time to plan a big date. So it looks like your going to have to settle for another thoughtless, monotonous, boring, tasteless "Dinner and a Movie."
 
-        We take the thoughtless and think for you.
+            We take the thoughtless and think for you.
 
-        We take the monotonous and add color.
+            We take the monotonous and add color.
 
-        We take the boring and bring excitement.
+            We take the boring and bring excitement.
 
-        We take the tasteless and spice it up.
+            We take the tasteless and spice it up.
 
-        If you want to plan an elaborate date night, then we suggest you plan ahead. But if you don't have time for that, then let us take you and your significant other to the "Wheels of Date Night."
+            If you want to plan an elaborate date night, then we suggest you plan ahead. But if you don't have time for that, then let us take you and your significant other to the "Wheels of Date Night."
 
 
 ## Process
@@ -91,31 +81,35 @@ write description here
 
 - ### Challenges Encountered
 
+    - #### The Food API
+
+    - #### Wheel value capture
+
 - ### Successes in Development
 
 ## Future Development
 
-In future development we can expand the choices of cuisines and genres presented. We can blend cuisines and blend genres for even more focused choices of food and movies.
+In future development we can expand the choices of cuisines and genres presented. We can blend cuisines and blend genres to get even more narrowed choices for food and movies.
 
-We could use geolocation to add the user's area then present local restaurants based on the dish selected, and local theaters playing the movie selected.
+We could use geolocation to add the user's current locatoin to present local restaurants based on the dish selected, and local theaters playing the movie selected.
 
-Bring in more APIs to add more parameters to the spontaneous date night experience. Such as local businesses with games, action oriented activities like wall climbing, go-kart racing, etc. We could include parameters for events happening locally like festivals, wine tasting, music events etc.
+Bring in more APIs to add parameters to the spontaneous date night experience. Such as local businesses with games, action oriented activities like wall climbing, go-kart racing, etc. We could include parameters for events happening locally like festivals, wine tasting, music events, sports games, etc.
 
 ## Credits
 
-## Resources
+- ### Resources
 
 NOTE: Click on a thumbnail to view source
 
-- ### Materialize CSS Framework
+- #### Materialize CSS Framework
 
- - [![name](assets/images/materialize.jpg)](https://materializecss.com//)
+    [![name](assets/images/materialize.jpg)](https://materializecss.com//)
 
-## Special Thanks
+- ## Special Thanks
 
 Thanks goes out to all the instructors and teacher assistants for their clear instruction and prompt and thorough answers to all our questions.
 
-Also, thanks to.
+Also, thanks to the development team. Each member brought fantastic ideas and great skills to the make this dream a reality.
 
 ## License
 
