@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!--Let browser know website is optimized for mobile-->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.0.1-alpha/dist/css/materialize.min.css">
@@ -68,9 +66,8 @@
         <span>Indian</span></div>
   </div>
   <div>
-    <label for="cuisine">Food Cuisine</label>
+    <label for="cuisine">Pick the Food Cuisine</label>
     <select id="cuisine" class="browser-default">
-      <option value="" disabled selected>Pick a food cuisine</option>
       <option value="">Chinese</option>
       <option value="">Italian</option>
       <option value="">French</option>
@@ -82,32 +79,38 @@
     </select>
   </div>
   <div>
-    <a id="foodBtn" class="waves-effect waves-light btn-small">Select</a>
+    <form id="food-list">
+      <p><label><input type="radio" disabled/><span>_______________</span></label></p></input>
+      <p><label><input type="radio" disabled/><span>_______________</span></label></p></input>
+      <p><label><input type="radio" disabled/><span>_______________</span></label></p></input>
+      <p><label><input type="radio" disabled/><span>_______________</span></label></p></input>
+      <p><label><input type="radio" disabled/><span>_______________</span></label></p></input>
+    </form>
   </div>
   <div>
-    <form id="food-list"></form>
-  </div>
-  <div>
-    <label for="genres">Movie Genres</label>
+    <label for="genres">Pick the Movie Genre</label>
 			<select id="genres" class="browser-default">
-        <option value="" disabled selected>Pick a genre</option>
-				<option value="28">Action</option>
-				<option value="12">Adventure</option>
-				<option value="35">Comedy</option>
-				<option value="18">Drama</option>
-				<option value="10751">Family</option>
-				<option value="27">Horror</option>
-				<option value="9648">Mystery</option>
-				<option value="10749">Romance</option>
-				<option value="878">Science Fiction</option>
-				<option value="53">Thriller</option>
+				<option  value="28">Action</option>
+				<option  value="12">Adventure</option>
+				<option  value="35">Comedy</option>
+				<option  value="18">Drama</option>
+				<option  value="10751">Family</option>
+				<option  value="27">Horror</option>
+				<option  value="9648">Mystery</option>
+				<option  value="10749">Romance</option>
+				<option  value="878">Science Fiction</option>
+				<option  value="53">Thriller</option>
 			</select>
     </div>
-  <div>
-    <a id="selectBtn" class="waves-effect waves-light btn-small">Select</a>
-  </div>
 	<div>
-		<form id="movie-list"></form>
+		<form id="movie-list">
+      <p><label><input type="radio" disabled/><span>_______________</span></label></p></input>
+      <p><label><input type="radio" disabled/><span>_______________</span></label></p></input>
+      <p><label><input type="radio" disabled/><span>_______________</span></label></p></input>
+      <p><label><input type="radio" disabled/><span>_______________</span></label></p></input>
+      <p><label><input type="radio" disabled/><span>_______________</span></label></p></input>
+    </form>
+    </div>
 	</div>
 	<div>
     <button id="saveBtn" class="waves-effect waves-light btn-small disabled">Save</button>

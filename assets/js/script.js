@@ -8,7 +8,6 @@
 // }
 
 //-------------movie variables
-// const today = dayjs().format("MMM D, YYYY");
 var dishPlaceHolder = "Yummy Food";
 var theDate = [];
 //-------------wheel variables
@@ -24,9 +23,10 @@ function initialize() {
 function fetchMovies(genreID) {
   const TMDBApiKey = "2f83b0344ec435557ea893d6df97bbfa";
   //get the genre id from user input
-  //fetches a list of the current top 20 most popluar movies from chosen genre
+  //fetches from the current top 100 most popluar movies from chosen genre
   var genreID = $("#genres").val();
-  var movieApi = 'https://api.themoviedb.org/3/discover/movie?api_key=' + TMDBApiKey + '&language=en-US&page=1&sort_by=popularity.desc&with_genres=' + genreID + '';
+  var movieListPage = Math.ceil(Math.random() * 5);
+  var movieApi = 'https://api.themoviedb.org/3/discover/movie?api_key=' + TMDBApiKey + '&language=en-US&page=' + movieListPage + '&sort_by=popularity.desc&with_genres=' + genreID + '';
   fetch(movieApi)
   .then(function(response) {
     if (response.status === 404) {
@@ -60,7 +60,7 @@ function createMovieSuggestions(data) {
 }
 
 function buildMovieList(movies) {
-    //displays the list of movies for our user to choose from, sets first listed movie as default checked
+    //displays the list of movies for our user to choose from, sets first listed movie as default selected
   $("#movie-list").empty();
   for (i in movies) {
     var addRadioBtn = "";
@@ -90,15 +90,12 @@ function save() {
   $("#saved-list").append(addDateEl);
 
   var newDate = {
-    // date: today, because localstorage doesn't like 3 items
     dish: dishPlaceHolder,
     movie: selectedMovie
   }
   
   theDate.push(newDate);
-  console.log(theDate);
   localStorage.setItem("dates", JSON.stringify(theDate));
-  console.log(localStorage);
   $("#saveBtn").addClass("disabled");
 }
 
@@ -113,15 +110,13 @@ function loadPreviousDates() {
 
   for (i in previousDates) {
     var addDateEl = "";
-    //issue: localstorage won't save more than one entry if there are 3 or more items in the array pushed
-    // addDateEl += '<p>' + previousDates[i].date + ', ' + previousDates[i].dish + ', ' + previousDates[i].movie + '</p>';
     addDateEl += '<p>' + previousDates[i].dish + ', ' + previousDates[i].movie + '</p>';
     $("#saved-list").append(addDateEl);
   }
 }
 
 initialize();
-$("#selectBtn").click(fetchMovies);
+$("#genres").change(fetchMovies);
 $("#saveBtn").click(save);
 $("#clearBtn").click(clear);
 
