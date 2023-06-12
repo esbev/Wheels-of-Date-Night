@@ -107,9 +107,9 @@ NOTE: Click on a thumbnail to view source
 
 - ## Special Thanks
 
-Thanks goes out to all the instructors and teacher assistants for their clear instruction and prompt and thorough answers to all our questions.
+    Thanks goes out to all the instructors and teacher assistants for their clear instruction and prompt and thorough answers to all our questions.
 
-Also, thanks to the development team. Each member brought fantastic ideas and great skills to the make this dream a reality.
+    Also, thanks to the development team. Each member brought fantastic ideas and great skills to the make this dream a reality.
 
 ## License
 
