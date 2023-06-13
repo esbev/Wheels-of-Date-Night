@@ -1,33 +1,35 @@
-*{
+#gen, #cuis {
+    color: white;
+}
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+body {
+    height: 100vh;
     background: #333;  
 }
-.container1{
-    position: relative;
-    width: 500px;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.wrapper1, .wrapper2 {
+    width: 400px;
+    height: 400px;
+    position: absolute;
 }
-.container2{
-    position: relative;
-    width: 500px;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.wrapper1 {
+    top: 10%;
+    left: 2.5%;
 }
-.container1 .spinBtn1{
+.wrapper2 {
+    top: 10%;
+    left: 60%;
+}
+.container1 .container2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.spinner1, .spinner2 {
     position: absolute;
     width: 60px;
     height: 60px;
@@ -37,139 +39,94 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-transform: uppercase;
-    letter-spacing: 0.1cm;
-    font-weight: 600;
-    color:#333;
     border: 4px solid rgba(0,0,0,0.75);
     cursor: pointer;
     user-select: none;
     top: 50%;
-    left: -30%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
-.container2 .spinBtn2{
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background: #fff;
-    border-radius: 50%;
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    letter-spacing: 0.1cm;
-    font-weight: 600;
-    color:#333;
-    border: 4px solid rgba(0,0,0,0.75);
-    cursor: pointer;
-    user-select: none;
-    top: 50%;
-    left: 130%;
-    transform: translate(-50%, -50%);
-}
-.container1 .spinBtn1::before{
+.spinner1::before, .spinner2::before {
     content: '';
     position: absolute;
-    top: -28px;
-    width: 20px;
+    top: 30%;
+    width: 40px;
     height: 30px;
-    background: #fff;
-    clip-path: polygon(50% 0, 15% 100%, 85% 100%);
+    background: gold;
 }
-.container2 .spinBtn2::before{
-    content: '';
-    position: absolute;
-    top: -28px;
-    width: 20px;
-    height: 30px;
-    background: #fff;
-    clip-path: polygon(50% 0, 15% 100%, 85% 100%);
+.spinner1::before, .spinner2::before {
+    left: 385%;
+    clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
 }
-.container1 .wheel1{
+.spinner2::before {
+    left: -365%;
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+}
+.wheel1, .wheel2 {
     position: absolute;
-    top: 10;
-    left: -80%;
+    /* top: 10; */
+    /* left: -50%; */
     width: 100%;
     height: 100%;
     background: #333;
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 0 0 0 5px #333,
-    0 0 0 15px #fff,
-    0 0 0 18px #111;
-    transition: transform 5s ease-in-out;
+    0 0 0 8px #fff,
+    0 0 0 7px white;
+    transition: transform;
 }
-.container2 .wheel2{
-    position: absolute;
-    top: 0;
-    left: 80%;
-    width: 100%;
-    height: 100%;
-    background: #333;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 0 0 5px #333,
-    0 0 0 15px #fff,
-    0 0 0 18px #111;
-    transition: transform 5s ease-in-out;
-}
-.container1 .wheel1 .genre{
+.genre, .cuisine {
     position: absolute;
     width: 50%;
     height: 50%;
     background: var(--clr);
     transform-origin: bottom right;
-    transform: rotate(calc(45deg * var(--i)));
-    clip-path: polygon(0 0, 56% 0,
-    100% 100%, 0 56%);
+    transform: rotate(calc(36deg * var(--i)));
+    clip-path: polygon(0 0, 50% 0, 99% 99%, 0 47%);
     display: flex;
     justify-content: center;
     align-items: center;
     user-select: none;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
-.container1 .wheel1 .genre span{
+.genre span, .cuisine span {
     position: relative;
     transform: rotate(45deg);
-    font-size: 0.75cm;
+    font-size: 0.60cm;
     font-weight: 700;
     color: #fff;
-    text-shadow: 3px 5px 2px rgba(0, 0, 0, 0.15);
+    text-shadow: 1px 3px .1em black;
 }
-.container1 .wheel1 .genre span::after{
-    content: '';
-    position: absolute;
-    font-size: 0.75cm;
-    font-weight: 500;
-}
-.container2 .wheel2 .cuisine{
-    position: absolute;
-    width: 50%;
-    height: 50%;
-    background: var(--clr);
-    transform-origin: bottom right;
-    transform: rotate(calc(45deg * var(--i)));
-    clip-path: polygon(0 0, 56% 0,
-    100% 100%, 0 56%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    user-select: none;
-    cursor: pointer;
-}
-.container2 .wheel2 .cuisine span{
-    position: relative;
-    transform: rotate(45deg);
-    font-size: 0.75cm;
-    font-weight: 700;
-    color: #fff;
-    text-shadow: 3px 5px 2px rgba(0, 0, 0, 0.15);
-}
-.container2 .wheel2 .cuisine span::after{
-    content: '';
-    position: absolute;
-    font-size: 0.75cm;
-    font-weight: 500;
+
+@media screen and (max-width: 768px) {
+    .wrapper1, .wrapper2 {
+        width: 200px;
+        height: 200px;   
+    }
+    .genre span, .cuisine span {
+        font-size: 0.30cm;
+        font-weight: 500;
+        text-shadow: 1px 2px .1em black;
+    }
+    .spinner1, .spinner2 {
+        width: 40px;
+        height: 40px;
+        border: 2px solid rgba(0,0,0,0.75);
+    }
+    .spinner1::before, .spinner2::before {
+        width: 30px;
+        height: 20px;
+    }
+    .spinner1::before {
+        left: 265%;
+    }
+    .spinner2::before {
+        left: -245%;
+    }
+    .wheel1, .wheel2 {
+        box-shadow: 0 0 0 5px #333,
+        0 0 0 6px #fff,
+        0 0 0 5px white;
+    }
 }

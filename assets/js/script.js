@@ -1,11 +1,4 @@
-
-//-------------movie variables
 var theDate = [];
-//-------------wheel variables
-let wheel1 = document.querySelector('.wheel1');
-let spinBtn1 = document.querySelector('.spinBtn1');
-let wheel2 = document.querySelector('.wheel2');
-let spinBtn2 = document.querySelector('.spinBtn2');
 
 function initialize() {
   loadPreviousDates();
@@ -178,3 +171,114 @@ spinBtn2.onclick = function(){
     wheel2.style.transform = "rotate(" + value + "deg)"
     value += Math.ceil(Math.random() * 6600);
 }
+
+///-----------------------------wheels and spinning
+
+let wheel1 = document.querySelector('.wheel1');
+let wheel2 = document.querySelector('.wheel2');
+let spinBtn = document.getElementById('spinBtn');
+let count = 0;
+let count2 = 0;
+let resultValue = 101;
+let resultValue2 = 101;
+var wheelCuisine = "";
+var wheelGenre = "";
+
+const rotationValues = [
+  {minDegree: 0, maxDegree: 9, value: 10749, label: "Romance"},
+  {minDegree: 10, maxDegree: 45, value: 35, label: "Comedy"},
+  {minDegree: 46, maxDegree: 81,  value: 28, label: "Action"},
+  {minDegree: 82, maxDegree: 117, value: 27, label: "Horror"},
+  {minDegree: 118, maxDegree: 153, value: 18, label: "Drama"},
+  {minDegree: 154, maxDegree: 189, value: 9648, label: "Mystery"},
+  {minDegree: 190, maxDegree: 225, value: 10751, label: "Family"},
+  {minDegree: 226, maxDegree: 261, value: 12, label: "Adventure"},
+  {minDegree: 262, maxDegree: 297, value: 53, label: "Thriller"},
+  {minDegree: 298, maxDegree: 333, value: 878, label: "Sci-Fi"},
+  {mindegree: 334, maxDegree: 360, value: 10749, label: "Romance"}
+];
+const rotationValues2 = [
+  {minDegree: 0, maxDegree: 9, value: 10749, label: "Chinese"},
+  {minDegree: 10, maxDegree: 45, value: 35, label: "Thai"},
+  {minDegree: 46, maxDegree: 81,  value: 28, label: "American"},
+  {minDegree: 82, maxDegree: 117, value: 27, label: "Italian"},
+  {minDegree: 118, maxDegree: 153, value: 18, label: "Indian"},
+  {minDegree: 154, maxDegree: 189, value: 9648, label: "Japanese"},
+  {minDegree: 190, maxDegree: 225, value: 10751, label: "French"},
+  {minDegree: 226, maxDegree: 261, value: 12, label: "Spanish"},
+  {minDegree: 262, maxDegree: 297, value: 53, label: "Greek"},
+  {minDegree: 298, maxDegree: 333, value: 878, label: "Caribbean"},
+  {mindegree: 334, maxDegree: 360, value: 10749, label: "Chinese"}
+];
+
+const valueGenerator = (angleValue) => {
+  for (let i of rotationValues) {
+      if (angleValue >= i.minDegree && angleValue <= i.maxDegree) {
+          wheelGenre = i.label;
+          $("#gen").text(wheelGenre);
+          spinBtn.disabled = false;
+          break;
+      }
+  }
+};
+const valueGenerator2 = (angleValue) => {
+  for (let x of rotationValues2) {
+      if (angleValue >= x.minDegree && angleValue <= x.maxDegree) {
+          wheelCuisine = x.label;
+          $("#cuis").text(wheelCuisine);
+          spinBtn.disabled = false;
+          break;
+      }
+  }
+};
+
+function spinWheel1() {
+  let randomDegree = Math.floor(Math.random() * (355 - 0 + 1) + 0);
+  var accumulator = 0;
+  let rotationInterval = window.setInterval(() => {
+    accumulator = accumulator + resultValue;    
+    wheel1.style.transform = "rotate(" + accumulator + "deg)";
+    if (accumulator >= 360) {
+      count++;
+      resultValue -= 5;
+      accumulator = 0;
+    } else if (count > 15 && accumulator == randomDegree) {
+      valueGenerator(randomDegree);
+      clearInterval(rotationInterval);
+      count = 0;
+      resultValue = 101;
+    }
+  }, 10);
+};
+
+function spinWheel2() {
+  let randomDegree = Math.floor(Math.random() * (355 - 0 + 1) + 0);
+  var accumulator = 0;
+  let rotationInterval = window.setInterval(() => {
+    accumulator = accumulator + resultValue;    
+    wheel2.style.transform = "rotate(" + accumulator + "deg)";
+    if (accumulator >= 360) {
+      count2++;
+      resultValue2 -= 5;
+      accumulator = 0;
+    } else if (count2 > 15 && accumulator == randomDegree) {
+      valueGenerator2(randomDegree);
+      clearInterval(rotationInterval);
+      count2 = 0;
+      resultValue2 = 101;
+    }
+  }, 10);
+};
+
+spinBtn.addEventListener("click", () => {
+  spinBtn.disabled = true;
+  spinWheel1();
+  spinWheel2();
+  // it's not waiting
+  // spinBtn.disabled = false;
+});
+
+
+//todo: reverese the pointer
+// if (something is <= 180) then += 180
+// else -+ 180
