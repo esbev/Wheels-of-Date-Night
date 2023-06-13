@@ -1,6 +1,5 @@
 
 //-------------movie variables
-var dishPlaceHolder = "Yummy Food";
 var theDate = [];
 //-------------wheel variables
 let wheel1 = document.querySelector('.wheel1');
@@ -126,17 +125,19 @@ function buildMovieList(movies) {
 
 function save() {
   var selectedMovie = ($('input[name=movie]:checked').val());
+  var selectedFood = ($('input[title=food]:checked').val());
+  $("#food-list").empty();
   $("#movie-list").empty();
 
 //to do: convert this to table elements
   var addDateEl ="";
   //issue: localstorage won't save more than one entry if there are 3 or more items in the array pushed
-  // addDateEl += '<p>' + today + ', ' + dishPlaceHolder + ', ' + selectedMovie + '</p>';
-  addDateEl += '<p>' + dishPlaceHolder + ', ' + selectedMovie + '</p>';
+  addDateEl += '<p>' + today + ', ' + selectedFood + ', ' + selectedMovie + '</p>';
+  addDateEl += '<p>' + selectedFood + ', ' + selectedMovie + '</p>';
   $("#saved-list").append(addDateEl);
 
   var newDate = {
-    dish: dishPlaceHolder,
+    dish: selectedFood,
     movie: selectedMovie
   }
   
@@ -162,7 +163,7 @@ function loadPreviousDates() {
 }
 
 initialize();
-$("#cuisine").click(fetchFood);
+$("#cuisine").change(fetchFood);
 $("#genres").change(fetchMovies);
 $("#saveBtn").click(save);
 $("#clearBtn").click(clear);
