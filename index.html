@@ -12,7 +12,107 @@
   </head>
 
 <body>
-  <header>
+  <header class="header">
+    <h1 class="header center orange-text">Wheels of Date Night!</h1>
+</header>
+
+<div class="container">
+    <div class="section">
+        <div class="row">
+            <div class="col s12 m4 l2">
+                <div class="wheel-left">
+                <!-- Image is placeholder for left wheel -->
+                    <img src="./assets/images/wheel.jpeg" alt="wheel-left">
+                </div>
+            </div>
+            <div class="col s12 m4 l2">
+              <!-- TO DO: center spin button between wheels -->
+            <a id="spinBtn" class="btn-large purple waves-effect waves-dark">SPIN</a>
+
+            </div>
+            <div class="col s12 m4 l2">
+                <div class="wheel-right">
+                  <!-- image is placeholder for right wheel -->
+                    <img src="./assets/images/wheel.jpeg" alt="wheel-left">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="header">
+            <h2 class="header center orange-text">Choose a dinner & a movie.</h2>
+            <h1 class="header center purple-text">It's a date!</h1>
+        </div>
+    </div>
+    
+<!-- column 1 for dinners -->
+    <div class="section">
+        <div class="row">
+            <div class="col s12 m4 l2">
+                <ul>
+                    <li>Dinner 1</li>
+                    <li>Dinner 2</li>
+                    <li>Dinner 3</li>
+                    <li>Dinner 4</li>
+                    <li>Dinner 5</li>
+                </ul>   
+            </div>
+            <!-- column 2 for accept button -->
+            <div class="col s12 m4 l8">               
+                 <a id="spinBtn" class="btn-large purple waves-effect waves-dark">Accept</a>
+            </div>
+            <!-- column 3 for movies -->
+            <div class="col s12 m4 l2">
+                <ul>
+                    <li>Movie 1</li>
+                    <li>Movie 2</li>
+                    <li>Movie 3</li>
+                    <li>Movie 4</li>
+                    <li>Movie 5</li>
+                </ul> 
+            </div>
+        </div>
+    </div>
+    <!-- header for dating history table -->
+    <div class="section">
+        <div class="section">
+            <div class="header">
+                <h4 class="header center orange-text">Dating History</h4>
+                </div>
+
+  <table>
+    <thead>
+      <tr>
+          <th>Date</th>
+          <th>Dinner</th>
+          <th>Movie</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>June 10, 2022</td>
+        <td>Dinner 2</td>
+        <td>Movie 3</td>
+      </tr>
+      <tr>
+        <td>October 5, 2022</td>
+        <td>Dinner 4</td>
+        <td>Movie 5</td>
+      </tr>
+      <tr>
+        <td>May 22, 2023</td>
+        <td>Dinner 3</td>
+        <td>Movie 1</td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+</div>
+
+
+
+  <!-- <header>
     <button id="spinBtn" class="waves-effect waves-light btn-small">Spin</button>
     <p id="gen"></p>
     <p id="cuis"></p>
@@ -75,7 +175,7 @@
       </div>
     </div>
   </div>
-
+ -->
   <!-- <div>
     <label for="cuisine">Pick the Food Cuisine</label>
     <select id="cuisine" class="browser-default">
