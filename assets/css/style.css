@@ -186,4 +186,10 @@ body{
         0 0 0 6px #fff,
         0 0 0 5px white;
     }
+
+img {
+    height: 20rem;
+    width: 20rem;
+}
+
 }
