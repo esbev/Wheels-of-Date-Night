@@ -5,7 +5,7 @@ function initialize() {
 }
 
 function fetchFood() {
-  var cuisineID = $("#cuisine").val();
+  // var cuisineID = $("#cuisine").val();
   var spoonApiKey = "7a94090b0a5346439ced2e2654e068d9";
   var foodList = 5;
   const foodApi = "https://api.spoonacular.com/recipes/complexSearch?apiKey=" + spoonApiKey + "&cuisine=" + cuisineID + "&number=" + foodList + "";
@@ -23,7 +23,7 @@ function fetchFood() {
       createFoodSuggestions(data);
     })
   console.log(foodApi)
-  }
+}
 
 function createFoodSuggestions(data) {
   var foodSuggestions = [];
@@ -38,24 +38,22 @@ function createFoodSuggestions(data) {
   buildFoodList(foodSuggestions);
 }
 
-
 function buildFoodList(food) {
-  //displays the list of movies for our user to choose from, sets first listed movie as default selected
-$("#food-list").empty();
-for (var i = 0; i < food.length; i++) {
-  var addRadioBtn = "";
-  addRadioBtn += '<p><label>';
-  if (i == 0) {
-    addRadioBtn += '<input name="title" type="radio" value="' + food[i] + '"checked/>';
-  } else {
-    addRadioBtn += '<input name="title" type="radio" value="' + food[i] + '"/>';
+  $("#food-list").empty();
+  for (var i = 0; i < food.length; i++) {
+    var addRadioBtn = "";
+    addRadioBtn += '<p><label>';
+    if (i == 0) {
+      addRadioBtn += '<input name="title" type="radio" value="' + food[i] + '"checked/>';
+    } else {
+      addRadioBtn += '<input name="title" type="radio" value="' + food[i] + '"/>';
+    }
+    addRadioBtn += '<span>' + food[i] + '</span>';
+    addRadioBtn += '</label></p>'
+    $("#food-list").append(addRadioBtn);
   }
-  addRadioBtn += '<span>' + food[i] + '</span>';
-  addRadioBtn += '</label></p>'
-  $("#food-list").append(addRadioBtn);
-}
-$("#saveBtn").removeClass("disabled");
-// return;
+  $("#saveBtn").removeClass("disabled");
+  // return;
 }
 
 function fetchMovies(genreID) {
@@ -125,7 +123,7 @@ function save() {
 //to do: convert this to table elements
   var addDateEl ="";
   //issue: localstorage won't save more than one entry if there are 3 or more items in the array pushed
-  addDateEl += '<p>' + today + ', ' + selectedFood + ', ' + selectedMovie + '</p>';
+  // addDateEl += '<p>' + today + ', ' + selectedFood + ', ' + selectedMovie + '</p>';
   addDateEl += '<p>' + selectedFood + ', ' + selectedMovie + '</p>';
   $("#saved-list").append(addDateEl);
 
@@ -161,26 +159,11 @@ $("#genres").change(fetchMovies);
 $("#saveBtn").click(save);
 $("#clearBtn").click(clear);
 
-spinBtn1.onclick = function(){
-    let value = Math.ceil(Math.random() * 3600);
-    wheel1.style.transform = "rotate(" + value + "deg)"
-    value += Math.ceil(Math.random() * 6600);
-}
-spinBtn2.onclick = function(){
-    let value = Math.ceil(Math.random() * 3600);
-    wheel2.style.transform = "rotate(" + value + "deg)"
-    value += Math.ceil(Math.random() * 6600);
-}
-
 ///-----------------------------wheels and spinning
 
 let wheel1 = document.querySelector('.wheel1');
 let wheel2 = document.querySelector('.wheel2');
-let spinBtn = document.getElementById('spinBtn');
-let count = 0;
-let count2 = 0;
-let resultValue = 101;
-let resultValue2 = 101;
+// let spinBtn = document.getElementById('spinBtn');
 var wheelCuisine = "";
 var wheelGenre = "";
 
@@ -210,75 +193,97 @@ const rotationValues2 = [
   {minDegree: 298, maxDegree: 333, value: 878, label: "Caribbean"},
   {mindegree: 334, maxDegree: 360, value: 10749, label: "Chinese"}
 ];
+let count = 0;
+let count2 = 0;
+let resultValue = 41;
+let resultValue2 = 51;
+var isEnabled;
+var isEnabled2;
+
+function spinWheel1() {
+  let randomDegree = Math.floor(Math.random() * (355 - 0 + 1) + 0);
+  var degreeAccumulator = 0;
+  let rotationInterval = window.setInterval(() => {
+    degreeAccumulator = degreeAccumulator + resultValue;    
+    wheel1.style.transform = "rotate(" + degreeAccumulator + "deg)";
+    if (degreeAccumulator >= 360) {
+      count++;
+      resultValue -= 5;
+      degreeAccumulator = 0;
+    } else if (count > 6 && degreeAccumulator == randomDegree) {
+      valueGenerator(randomDegree);
+      enableSpinBtn();
+      clearInterval(rotationInterval);
+      count = 0;
+      resultValue = 41;
+    }
+  }, 10);
+};
+
+function stopWheel() {
+  //start clearInterval
+}
 
 const valueGenerator = (angleValue) => {
   for (let i of rotationValues) {
       if (angleValue >= i.minDegree && angleValue <= i.maxDegree) {
           wheelGenre = i.label;
           $("#gen").text(wheelGenre);
-          spinBtn.disabled = false;
+          isEnabled = true;
           break;
       }
   }
-};
-const valueGenerator2 = (angleValue) => {
-  for (let x of rotationValues2) {
-      if (angleValue >= x.minDegree && angleValue <= x.maxDegree) {
-          wheelCuisine = x.label;
-          $("#cuis").text(wheelCuisine);
-          spinBtn.disabled = false;
-          break;
-      }
-  }
-};
-
-function spinWheel1() {
-  let randomDegree = Math.floor(Math.random() * (355 - 0 + 1) + 0);
-  var accumulator = 0;
-  let rotationInterval = window.setInterval(() => {
-    accumulator = accumulator + resultValue;    
-    wheel1.style.transform = "rotate(" + accumulator + "deg)";
-    if (accumulator >= 360) {
-      count++;
-      resultValue -= 5;
-      accumulator = 0;
-    } else if (count > 15 && accumulator == randomDegree) {
-      valueGenerator(randomDegree);
-      clearInterval(rotationInterval);
-      count = 0;
-      resultValue = 101;
-    }
-  }, 10);
 };
 
 function spinWheel2() {
   let randomDegree = Math.floor(Math.random() * (355 - 0 + 1) + 0);
-  var accumulator = 0;
+  var degreeAccumulator = 0;
   let rotationInterval = window.setInterval(() => {
-    accumulator = accumulator + resultValue;    
-    wheel2.style.transform = "rotate(" + accumulator + "deg)";
-    if (accumulator >= 360) {
+    degreeAccumulator = degreeAccumulator + resultValue2;    
+    wheel2.style.transform = "rotate(" + degreeAccumulator + "deg)";
+    if (degreeAccumulator >= 360) {
       count2++;
       resultValue2 -= 5;
-      accumulator = 0;
-    } else if (count2 > 15 && accumulator == randomDegree) {
+      degreeAccumulator = 0;
+    } else if (count2 > 8 && degreeAccumulator == randomDegree) {
       valueGenerator2(randomDegree);
+      enableSpinBtn();
       clearInterval(rotationInterval);
       count2 = 0;
-      resultValue2 = 101;
+      resultValue2 = 51;
     }
   }, 10);
 };
 
-spinBtn.addEventListener("click", () => {
+const valueGenerator2 = (angleValue) => {
+  if (angleValue <= 180){
+    angleValue += 180;
+  } else {
+    angleValue -= 180;
+  }
+  for (let x of rotationValues2) {
+      if (angleValue >= x.minDegree && angleValue <= x.maxDegree) {
+          wheelCuisine = x.label;
+          $("#cuis").text(wheelCuisine);
+          isEnabled2 = true;
+          break;
+      }
+  }
+};
+
+function enableSpinBtn() {
+  if (isEnabled && isEnabled2) {
+    spinBtn.disabled = false;
+    isEnabled = false;
+    isEnabled2 = false;
+  }
+};
+
+$("#spinBtn").on("click", () => {
+// spinBtn.addEventListener("click", () => {
   spinBtn.disabled = true;
-  spinWheel1();
+  // spinWheel1();
   spinWheel2();
   // it's not waiting
   // spinBtn.disabled = false;
 });
-
-
-//todo: reverese the pointer
-// if (something is <= 180) then += 180
-// else -+ 180
