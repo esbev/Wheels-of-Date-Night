@@ -9,7 +9,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #333;  
+    background: #c7c7c7;  
 }
 .wrapper1, .wrapper2 {
     width: 400px;
@@ -43,7 +43,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 4px solid rgba(0,0,0,0.75);
+    border: 2px solid rgba(0,0,0,0.75);
     cursor: pointer;
     user-select: none;
     top: 50%;
@@ -56,14 +56,14 @@ body{
     top: 30%;
     width: 40px;
     height: 30px;
-    background: gold;
+    background: rgb(255, 136, 0);
 }
 .spinner1::before, .spinner2::before {
-    left: 385%;
+    left: 360%;
     clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
 }
 .spinner2::before {
-    left: -365%;
+    left: -330%;
     clip-path: polygon(0 0, 0% 100%, 100% 50%);
 }
 .wheel1, .wheel2 {
@@ -75,9 +75,8 @@ body{
     background: #333;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 0 0 5px #333,
-    0 0 0 8px #fff,
-    0 0 0 7px white;
+    box-shadow: 0 0 0 4px #333,
+    0 0 0 4px #333;
     transition: transform;
 }
 .genre, .cuisine {
@@ -113,6 +112,30 @@ body{
         width: 300px;
         height: 300px;   
     }
+    .genre span, .cuisine span {
+        font-size: 0.45cm;
+        font-weight: 600;
+        text-shadow: 1px 2px .1em black;
+    }
+    .spinner1, .spinner2 {
+        width: 50px;
+        height: 50px;
+        border: 2px solid rgba(0,0,0,0.75);
+    }
+    .spinner1::before, .spinner2::before {
+        width: 35px;
+        height: 25px;
+    }
+    .spinner1::before {
+        left: 320%;
+    }
+    .spinner2::before {
+        left: -295%;
+    }
+    .wheel1, .wheel2 {
+        box-shadow: 0 0 0 2px #333,
+        0 0 0 2px #333;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -138,11 +161,11 @@ body{
         left: 265%;
     }
     .spinner2::before {
-        left: -245%;
+        left: -250%;
     }
     .wheel1, .wheel2 {
-        box-shadow: 0 0 0 5px #333,
-        0 0 0 6px #fff,
-        0 0 0 5px white;
+        box-shadow: 0 0 0 2px #333,
+        0 0 0 2px #333;
     }
+
 }

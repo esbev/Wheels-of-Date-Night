@@ -13,7 +13,7 @@
 
 <body>
   <header class="header">
-    <h1 class="header center orange-text">Wheels of Date Night!</h1>
+    <h1 class="header center orange-text"></h1>
   </header>
 
   <div class="container">
@@ -49,11 +49,13 @@
                       </div>
                     </div>
               </div>
+            
+
               <div class="col s12 m4 l2">
                 <!-- TO DO: center spin button between wheels -->
               <a id="spinBtn" class="btn-large purple waves-effect waves-dark">SPIN</a>
-
               </div>
+
               <div class="col s12 m4 l2">
                   <div class="wheel-right">
                     <div class="wrapper2">
@@ -80,12 +82,13 @@
                             <span>Mystery</span></div>
                           <div class="genre" style="--i:10;--clr:#b667d8;">
                             <span>Drama</span></div>
-                        </div>
                       </div>
                     </div>
+                  </div>
               </div>
           </div>
       </div>
+  </div>
       
       <div class="section">
           <div class="header">
@@ -98,8 +101,8 @@
       <div class="section">
           <div class="row">
               <div class="col s12 m4 l2">
-                <label>Pick a Dish</label>
-                <form id="food-list">
+                <label id="dish-label">Choose Dish</label>
+                <form id="food-list" class="food-list">
                   <p><label><input type="radio" disabled/><span>_______________</span></label></p></input>
                   <p><label><input type="radio" disabled/><span>_______________</span></label></p></input>
                   <p><label><input type="radio" disabled/><span>_______________</span></label></p></input>
@@ -113,8 +116,8 @@
               </div>
               <!-- column 3 for movies -->
               <div class="col s12 m4 l2">
-                <label>Pick a Movie</label>
-                <form id="movie-list">
+                <label id="movie-label">Choose Movie</label>
+                <form id="movie-list" class="movie-list">
                   <p><label><input type="radio" disabled/><span>_______________</span></input></label></p>
                   <p><label><input type="radio" disabled/><span>_______________</span></input></label></p>
                   <p><label><input type="radio" disabled/><span>_______________</span></input></label></p>
@@ -134,34 +137,18 @@
     <table>
       <thead>
         <tr>
-            <th>Date</th>
-            <th>Dinner</th>
-            <th>Movie</th>
+          <th>Dinner</th><th>Movie</th>
         </tr>
       </thead>
 
-      <tbody>
-        <tr>
-          <td>June 10, 2022</td>
-          <td>Dinner 2</td>
-          <td>Movie 3</td>
-        </tr>
-        <tr>
-          <td>October 5, 2022</td>
-          <td>Dinner 4</td>
-          <td>Movie 5</td>
-        </tr>
-        <tr>
-          <td>May 22, 2023</td>
-          <td>Dinner 3</td>
-          <td>Movie 1</td>
-        </tr>
-      </tbody>
+      <tbody id="saved-list"></tbody>
     </table>
+    
       </div>
   </div>
+  <!-- <div id="saved-list"></div> -->
+
   <button id="clearBtn" class="btn-large purple waves-effect waves-dark">Clear</button>
-  <div id="saved-list"></div>
 
 
   <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.0.1-alpha/dist/js/materialize.min.js"></script>

@@ -35,6 +35,7 @@ function createFoodSuggestions(data) {
 }
 
 function populateFoodList(food) {
+  $("#dish-label").text("Choose " + wheelCuisine + " Dish");
   $("#food-list").empty();
   for (var i = 0; i < food.length; i++) {
     var addRadioBtn = "";
@@ -58,7 +59,6 @@ function fetchMovies(genreID) {
   fetch(movieApi)
   .then(function(response) {
     if (response.status === 404) {
-        // location.replace("404.html");
         console.log("404");
         return;
     } else {
@@ -86,6 +86,7 @@ function createMovieSuggestions(data) {
 }
 
 function populateMovieList(movies) {
+  $("#movie-label").text("Choose " + wheelGenreLabel + " Movie")
   $("#movie-list").empty();
   for (i in movies) {
     var addRadioBtn = "";
@@ -100,17 +101,14 @@ function populateMovieList(movies) {
     $("#movie-list").append(addRadioBtn);
   }
   $("#acceptBtn").removeClass("disabled");
-  // return;
 }
 
 function acceptAndSave() {
+  var selectedFood = ($('input[name=title]:checked').val());
   var selectedMovie = ($('input[name=movie]:checked').val());
-  var selectedFood = ($('input[title=food]:checked').val());
   resetLists();
 
-//to do: convert this to table elements
-  var addDateEl ="";
-  addDateEl += '<p>' + selectedFood + ', ' + selectedMovie + '</p>';
+  var addDateEl = '<tr><td>' + selectedFood + '</td><td>' + selectedMovie + '</td></tr>';
   $("#saved-list").append(addDateEl);
 
   var newDate = {
@@ -132,7 +130,6 @@ function resetLists() {
   }
 }
 
-
 function clear() {
   $("#saved-list").empty();
   theDate = [];
@@ -143,8 +140,8 @@ function loadPreviousDates() {
   var previousDates = JSON.parse(window.localStorage.getItem("dates"));
 
   for (i in previousDates) {
-    var addDateEl = "";
-    addDateEl += '<p>' + previousDates[i].dish + ', ' + previousDates[i].movie + '</p>';
+    // var addDateEl = '<p>' + previousDates[i].dish + ', ' + previousDates[i].movie + '</p>';
+    var addDateEl = '<tr><td>' + previousDates[i].dish + '</td><td>' + previousDates[i].movie + '</td></tr>';
     $("#saved-list").append(addDateEl);
   }
 }
@@ -153,7 +150,8 @@ function loadPreviousDates() {
 let wheel1 = document.querySelector('.wheel1');
 let wheel2 = document.querySelector('.wheel2');
 var wheelCuisine = "";
-var wheelGenre = "";
+var wheelGenreId = "";
+var wheelGenreLabel = "";
 const rotationValues = [
   {minDegree: 0, maxDegree: 9, label: "Chinese"},
   {minDegree: 10, maxDegree: 45, label: "Thai"},
@@ -167,7 +165,6 @@ const rotationValues = [
   {minDegree: 298, maxDegree: 333, label: "Caribbean"},
   {mindegree: 334, maxDegree: 360, label: "Chinese"}
 ];
-
 const rotationValues2 = [
   {minDegree: 0, maxDegree: 9, value: 10749, label: "Romance"},
   {minDegree: 10, maxDegree: 45, value: 35, label: "Comedy"},
@@ -210,12 +207,12 @@ function spinWheel1() {
 
 const valueGenerator = (angleValue) => {
   for (let i of rotationValues) {
-      if (angleValue >= i.minDegree && angleValue <= i.maxDegree) {
-          wheelGenre = i.label;
-          $("#gen").text(wheelGenre);
-          isEnabled = true;
-          break;
-      }
+    if (angleValue >= i.minDegree && angleValue <= i.maxDegree) {
+      wheelCuisine = i.label;
+      $("#cuis").text(wheelCuisine);
+      isEnabled = true;
+      break;
+    }
   }
 };
 
@@ -246,12 +243,13 @@ const valueGenerator2 = (angleValue) => {
     angleValue -= 180;
   }
   for (let x of rotationValues2) {
-      if (angleValue >= x.minDegree && angleValue <= x.maxDegree) {
-          wheelCuisine = x.value;
-          $("#cuis").text(wheelCuisine);
-          isEnabled2 = true;
-          break;
-      }
+    if (angleValue >= x.minDegree && angleValue <= x.maxDegree) {
+      wheelGenreId = x.value;
+      wheelGenreLabel = x.label;
+      $("#gen").text(wheelGenreId);
+      isEnabled2 = true;
+      break;
+    }
   }
 };
 
@@ -260,9 +258,9 @@ function enableSpinBtn() {
     $("#spinBtn").removeClass("disabled");
     isEnabled = false;
     isEnabled2 = false;
-    console.log(wheelGenre + ", " + wheelCuisine);
+    console.log(wheelCuisine + ", " + wheelGenreLabel);
     fetchFood(wheelCuisine);
-    fetchMovies(wheelGenre);
+    fetchMovies(wheelGenreId);
   }
 };
 
