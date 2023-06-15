@@ -11,17 +11,12 @@ body{
     min-height: 100vh;
     background: #333;  
 }
-/* .axel {
-    display: flex;
-    position: relative;
-    flex-wrap: wrap;
-    gap: 10px;
-} */
 .wrapper1, .wrapper2 {
     width: 400px;
     height: 400px;
     position: absolute;
 }
+/* change wrapper here to move the wheels */
 .wrapper1 {
     top: 10%;
     left: 10%;
@@ -101,11 +96,16 @@ body{
 }
 .genre span, .cuisine span {
     position: relative;
-    transform: rotate(225deg);
     font-size: 0.60cm;
     font-weight: 700;
     color: #fff;
     text-shadow: 1px 3px .1em black;
+}
+.cuisine span {
+    transform: rotate(225deg);
+}
+.genre span {
+    transform: rotate(45deg);
 }
 
 @media screen and (max-width: 992px) {
@@ -145,10 +145,4 @@ body{
         0 0 0 6px #fff,
         0 0 0 5px white;
     }
-
-img {
-    height: 20rem;
-    width: 20rem;
-}
-
 }

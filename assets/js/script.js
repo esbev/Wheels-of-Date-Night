@@ -4,14 +4,12 @@ function initialize() {
   loadPreviousDates();
 }
 
-function fetchFood() {
-  // var cuisineID = $("#cuisine").val();
+function fetchFood(cuisineID) {
   var spoonApiKey = "7a94090b0a5346439ced2e2654e068d9";
   var foodList = 5;
   const foodApi = "https://api.spoonacular.com/recipes/complexSearch?apiKey=" + spoonApiKey + "&cuisine=" + cuisineID + "&number=" + foodList + "";
   fetch(foodApi)
     .then(function(response) {
-      console.log(response)
       if (response.status === 404) {
           console.log("404");
           return;
@@ -22,12 +20,10 @@ function fetchFood() {
     .then(function(data) {
       createFoodSuggestions(data);
     })
-  console.log(foodApi)
 }
 
 function createFoodSuggestions(data) {
   var foodSuggestions = [];
-  // chooses 5 random foods with no duplicates
   while (foodSuggestions.length < 5) {
     var randomFoodOption = Math.floor(Math.random() * data.results.length);
     var newFood = data.results[randomFoodOption].title;
@@ -35,10 +31,10 @@ function createFoodSuggestions(data) {
     foodSuggestions.push(newFood);
     }
   }
-  buildFoodList(foodSuggestions);
+  populateFoodList(foodSuggestions);
 }
 
-function buildFoodList(food) {
+function populateFoodList(food) {
   $("#food-list").empty();
   for (var i = 0; i < food.length; i++) {
     var addRadioBtn = "";
@@ -52,15 +48,11 @@ function buildFoodList(food) {
     addRadioBtn += '</label></p>'
     $("#food-list").append(addRadioBtn);
   }
-  $("#saveBtn").removeClass("disabled");
-  // return;
+  $("#acceptBtn").removeClass("disabled");
 }
 
 function fetchMovies(genreID) {
   const TMDBApiKey = "2f83b0344ec435557ea893d6df97bbfa";
-  //get the genre id from user input
-  //fetches from the current top 100 most popluar movies from chosen genre
-  var genreID = $("#genres").val();
   var movieListPage = Math.ceil(Math.random() * 5);
   var movieApi = 'https://api.themoviedb.org/3/discover/movie?api_key=' + TMDBApiKey + '&language=en-US&page=' + movieListPage + '&sort_by=popularity.desc&with_genres=' + genreID + '';
   fetch(movieApi)
@@ -80,7 +72,6 @@ function fetchMovies(genreID) {
 
 function createMovieSuggestions(data) {
   var movieSuggestions = [];
-  // chooses 5 random movies from list in english with no duplicates
   while (movieSuggestions.length < 5) {
     var randomMovieNum = Math.floor(Math.random() * data.results.length);
     var newMovie = data.results[randomMovieNum].original_title;
@@ -91,12 +82,10 @@ function createMovieSuggestions(data) {
       }
     }
   }
-  buildMovieList(movieSuggestions);
-  return;
+  populateMovieList(movieSuggestions);
 }
 
-function buildMovieList(movies) {
-    //displays the list of movies for our user to choose from, sets first listed movie as default selected
+function populateMovieList(movies) {
   $("#movie-list").empty();
   for (i in movies) {
     var addRadioBtn = "";
@@ -110,20 +99,17 @@ function buildMovieList(movies) {
     addRadioBtn += '</label></p>'
     $("#movie-list").append(addRadioBtn);
   }
-  $("#saveBtn").removeClass("disabled");
-  return;
+  $("#acceptBtn").removeClass("disabled");
+  // return;
 }
 
-function save() {
+function acceptAndSave() {
   var selectedMovie = ($('input[name=movie]:checked').val());
   var selectedFood = ($('input[title=food]:checked').val());
-  $("#food-list").empty();
-  $("#movie-list").empty();
+  resetLists();
 
 //to do: convert this to table elements
   var addDateEl ="";
-  //issue: localstorage won't save more than one entry if there are 3 or more items in the array pushed
-  // addDateEl += '<p>' + today + ', ' + selectedFood + ', ' + selectedMovie + '</p>';
   addDateEl += '<p>' + selectedFood + ', ' + selectedMovie + '</p>';
   $("#saved-list").append(addDateEl);
 
@@ -134,8 +120,18 @@ function save() {
   
   theDate.push(newDate);
   localStorage.setItem("dates", JSON.stringify(theDate));
-  $("#saveBtn").addClass("disabled");
+  $("#acceptBtn").addClass("disabled");
 }
+
+function resetLists() {
+  $("#food-list").empty();
+  $("#movie-list").empty();
+  for (i=1; i<=5; i++) {
+    $("#movie-list").append('<p><label><input type="radio" disabled/><span>_______________</span></label></p></input>');
+    $("#food-list").append('<p><label><input type="radio" disabled/><span>_______________</span></label></p></input>');
+  }
+}
+
 
 function clear() {
   $("#saved-list").empty();
@@ -153,21 +149,26 @@ function loadPreviousDates() {
   }
 }
 
-initialize();
-$("#cuisine").change(fetchFood);
-$("#genres").change(fetchMovies);
-$("#saveBtn").click(save);
-$("#clearBtn").click(clear);
-
 ///-----------------------------wheels and spinning
-
 let wheel1 = document.querySelector('.wheel1');
 let wheel2 = document.querySelector('.wheel2');
-// let spinBtn = document.getElementById('spinBtn');
 var wheelCuisine = "";
 var wheelGenre = "";
-
 const rotationValues = [
+  {minDegree: 0, maxDegree: 9, label: "Chinese"},
+  {minDegree: 10, maxDegree: 45, label: "Thai"},
+  {minDegree: 46, maxDegree: 81,  label: "American"},
+  {minDegree: 82, maxDegree: 117, label: "Italian"},
+  {minDegree: 118, maxDegree: 153, label: "Indian"},
+  {minDegree: 154, maxDegree: 189, label: "Japanese"},
+  {minDegree: 190, maxDegree: 225, label: "French"},
+  {minDegree: 226, maxDegree: 261, label: "Spanish"},
+  {minDegree: 262, maxDegree: 297, label: "Greek"},
+  {minDegree: 298, maxDegree: 333, label: "Caribbean"},
+  {mindegree: 334, maxDegree: 360, label: "Chinese"}
+];
+
+const rotationValues2 = [
   {minDegree: 0, maxDegree: 9, value: 10749, label: "Romance"},
   {minDegree: 10, maxDegree: 45, value: 35, label: "Comedy"},
   {minDegree: 46, maxDegree: 81,  value: 28, label: "Action"},
@@ -179,19 +180,6 @@ const rotationValues = [
   {minDegree: 262, maxDegree: 297, value: 53, label: "Thriller"},
   {minDegree: 298, maxDegree: 333, value: 878, label: "Sci-Fi"},
   {mindegree: 334, maxDegree: 360, value: 10749, label: "Romance"}
-];
-const rotationValues2 = [
-  {minDegree: 0, maxDegree: 9, value: 10749, label: "Chinese"},
-  {minDegree: 10, maxDegree: 45, value: 35, label: "Thai"},
-  {minDegree: 46, maxDegree: 81,  value: 28, label: "American"},
-  {minDegree: 82, maxDegree: 117, value: 27, label: "Italian"},
-  {minDegree: 118, maxDegree: 153, value: 18, label: "Indian"},
-  {minDegree: 154, maxDegree: 189, value: 9648, label: "Japanese"},
-  {minDegree: 190, maxDegree: 225, value: 10751, label: "French"},
-  {minDegree: 226, maxDegree: 261, value: 12, label: "Spanish"},
-  {minDegree: 262, maxDegree: 297, value: 53, label: "Greek"},
-  {minDegree: 298, maxDegree: 333, value: 878, label: "Caribbean"},
-  {mindegree: 334, maxDegree: 360, value: 10749, label: "Chinese"}
 ];
 let count = 0;
 let count2 = 0;
@@ -219,10 +207,6 @@ function spinWheel1() {
     }
   }, 10);
 };
-
-function stopWheel() {
-  //start clearInterval
-}
 
 const valueGenerator = (angleValue) => {
   for (let i of rotationValues) {
@@ -263,7 +247,7 @@ const valueGenerator2 = (angleValue) => {
   }
   for (let x of rotationValues2) {
       if (angleValue >= x.minDegree && angleValue <= x.maxDegree) {
-          wheelCuisine = x.label;
+          wheelCuisine = x.value;
           $("#cuis").text(wheelCuisine);
           isEnabled2 = true;
           break;
@@ -273,17 +257,20 @@ const valueGenerator2 = (angleValue) => {
 
 function enableSpinBtn() {
   if (isEnabled && isEnabled2) {
-    spinBtn.disabled = false;
+    $("#spinBtn").removeClass("disabled");
     isEnabled = false;
     isEnabled2 = false;
+    console.log(wheelGenre + ", " + wheelCuisine);
+    fetchFood(wheelCuisine);
+    fetchMovies(wheelGenre);
   }
 };
 
+initialize();
 $("#spinBtn").on("click", () => {
-// spinBtn.addEventListener("click", () => {
-  spinBtn.disabled = true;
-  // spinWheel1();
+  $("#spinBtn").addClass("disabled");
+  spinWheel1();
   spinWheel2();
-  // it's not waiting
-  // spinBtn.disabled = false;
 });
+$("#acceptBtn").click(acceptAndSave);
+$("#clearBtn").click(clear);
