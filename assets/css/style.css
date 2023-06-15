@@ -56,14 +56,30 @@ body{
     top: 30%;
     width: 40px;
     height: 30px;
-    background: rgb(255, 136, 0);
+    background: black;
 }
-.spinner1::before, .spinner2::before {
+.spinner1::before {
     left: 360%;
     clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
 }
 .spinner2::before {
     left: -330%;
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+}
+.spinner1::after, .spinner2::after {
+    content: '';
+    position: absolute;
+    top: 33%;
+    width: 37px;
+    height: 27px;
+    background: rgb(255, 136, 0);
+}
+.spinner1::after {
+    left: 363%;
+    clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
+}
+.spinner2::after {
+    left: -328%;
     clip-path: polygon(0 0, 0% 100%, 100% 50%);
 }
 .wheel1, .wheel2 {
@@ -132,6 +148,16 @@ body{
     .spinner2::before {
         left: -295%;
     }
+    .spinner1::after, .spinner2::after {
+        width: 32px;
+        height: 22px;
+    }
+    .spinner1::after {
+        left: 325%;
+    }
+    .spinner2::after {
+        left: -293%;
+    }
     .wheel1, .wheel2 {
         box-shadow: 0 0 0 2px #333,
         0 0 0 2px #333;
@@ -162,6 +188,17 @@ body{
     }
     .spinner2::before {
         left: -250%;
+    }
+    .spinner1::after, .spinner2::after {
+        width: 27px;
+        height: 17px;
+        top: 34%;
+    }
+    .spinner1::after {
+        left: 271%;
+    }
+    .spinner2::after {
+        left: -248%;
     }
     .wheel1, .wheel2 {
         box-shadow: 0 0 0 2px #333,
