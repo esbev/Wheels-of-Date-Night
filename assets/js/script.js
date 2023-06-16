@@ -86,7 +86,7 @@ function createMovieSuggestions(data) {
 }
 
 function populateMovieList(movies) {
-  $("#movie-label").text("Choose " + wheelGenreLabel + " Movie")
+  $("#movie-label").text("Choose " + wheelGenreLabel + " Movie");
   $("#movie-list").empty();
   for (i in movies) {
     var addRadioBtn = "";
@@ -122,11 +122,13 @@ function acceptAndSave() {
 }
 
 function resetLists() {
+  $("#dish-label").text("Choose Dish");
+  $("#movie-label").text("Choose Movie");
   $("#food-list").empty();
   $("#movie-list").empty();
   for (i=1; i<=5; i++) {
-    $("#movie-list").append('<p><label><input type="radio" disabled/><span>_______________</span></label></p></input>');
     $("#food-list").append('<p><label><input type="radio" disabled/><span>_______________</span></label></p></input>');
+    $("#movie-list").append('<p><label><input type="radio" disabled/><span>_______________</span></label></p></input>');
   }
 }
 
@@ -267,6 +269,8 @@ function enableSpinBtn() {
 initialize();
 $("#spinBtn").on("click", () => {
   $("#spinBtn").addClass("disabled");
+  $("#acceptBtn").addClass("disabled");
+  resetLists();
   spinWheel1();
   spinWheel2();
 });
