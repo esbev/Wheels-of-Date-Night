@@ -1,4 +1,4 @@
-gi*{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,25 +8,21 @@ body{
     display: block;
     align-items: center;
     min-height: 100vh;
-    background: #c7c7c7;  
+    background: #c7c7c7;
 }
 .wrapper1, .wrapper2 {
     width: 400px;
     height: 400px;
+    position: relative;
 
 }
 /* change wrapper here to move the wheels */
 .wrapper1 {
-    top: 10%;
     left: 0;
-    position: relative;
 }
 .wrapper2 {
-    top: 10%;
-    left: 20%;
-    position: relative;
+    left: 50%;
 }
-
 .spinner1, .spinner2 {
     position: absolute;
     width: 60px;
@@ -38,7 +34,6 @@ body{
     justify-content: center;
     align-items: center;
     border: 2px solid rgba(0,0,0,0.75);
-    cursor: pointer;
     user-select: none;
     top: 50%;
     left: 50%;
