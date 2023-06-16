@@ -8,8 +8,10 @@ body{
     display: block;
     align-items: center;
     min-height: 100vh;
+    min-width: 768px;
     background: #c7c7c7;
 }
+
 .wrapper1, .wrapper2 {
     width: 400px;
     height: 400px;
@@ -21,7 +23,7 @@ body{
     left: 0;
 }
 .wrapper2 {
-    left: 50%;
+    left: 25%;
 }
 .spinner1, .spinner2 {
     position: absolute;
@@ -84,12 +86,6 @@ body{
     0 0 0 4px #333;
     transition: transform;
 }
-
-.wheel-right, .wheel-left {
-    display: block;
-}
-
-
 .genre, .cuisine {
     position: absolute;
     width: 50%;
@@ -161,7 +157,9 @@ body{
 @media screen and (max-width: 768px) {
     .wrapper1, .wrapper2 {
         width: 200px;
-        height: 200px;   
+        height: 200px;
+        margin: 5px;  
+        left: 25%;
     }
     .genre span, .cuisine span {
         font-size: 0.30cm;
@@ -198,14 +196,12 @@ body{
         box-shadow: 0 0 0 2px #333,
         0 0 0 2px #333;
     }
-
 }
 #choice-text {
     color: #db7093;
     font-size: 5rem;
     font-family: 'Times New Roman', Times, serif;
 }
- 
 #date-text {
     color:#3cb371;
     font-size: 5rem;
