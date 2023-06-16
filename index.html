@@ -15,14 +15,8 @@
 </head>
 
 <body>
-  <header class="header">
-    <nav>
-      <div class="nav-wrapper center purple">
-        <a href="#" class="brand-logo"></a>
-        <h1>Wheels of Date Night</h1>
-        <ul id="nav-mobile" class="center hide-on-med-and-down"></ul>
-      </div>
-    </nav>
+  <header class="center">
+    <img src="assets/images/WoDN-LogoMedium.png">
   </header>
 
   <div class="container">
@@ -31,7 +25,6 @@
         <div class="col s12 m4 l2">
           <div class="wheel-left">
             <div class="wrapper1">
-              <div class="container1">
                 <div class="spinner1"></div>
                 <div class="wheel1">
                   <div class="cuisine" style="--i:1;--clr:#db7093;">
@@ -65,20 +58,12 @@
                     <span>Indian</span>
                   </div>
                 </div>
-              </div>
             </div>
           </div>
-
-
-          <div class="col s12 m4 l2">
-            <!-- TO DO: center spin button between wheels -->
-            <a id="spinBtn" class="btn-large purple waves-effect waves-dark">SPIN</a>
-          </div>
-
+        </div>
           <div class="col s12 m4 l2">
             <div class="wheel-right">
               <div class="wrapper2">
-                <div class="container2">
                   <div class="spinner2"></div>
                   <div class="wheel2">
                     <div class="genre" style="--i:1;--clr:#db7093;">
@@ -112,18 +97,14 @@
                       <span>Drama</span>
                     </div>
                   </div>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="section">
-        <div class="header">
-          <h2 id="choice-text" class="header center">Choose a dinner & a movie.</h2>
-          <h1 id="date-text" class="header center">It's a date!</h1>
-        </div>
+      <div class="col s12 m4 l2 center">
+        <!-- TO DO: center spin button between wheels -->
+        <a id="spinBtn" class="btn-large purple waves-effect waves-dark hoverable">SPIN</a>
       </div>
 
       <!-- column 1 for dinners -->
@@ -141,7 +122,7 @@
           </div>
           <!-- column 2 for accept button -->
           <div class="col s12 m4 l8">
-            <a id="acceptBtn" class="btn-large purple waves-effect waves-dark disabled">Accept</a>
+            <a id="acceptBtn" class="btn-large purple waves-effect waves-dark hoverable disabled">Accept</a>
           </div>
           <!-- column 3 for movies -->
           <div class="col s12 m4 l2">
@@ -178,7 +159,7 @@
       </div>
       <!-- <div id="saved-list"></div> -->
 
-      <button id="clearBtn" class="btn-large purple waves-effect waves-dark">Clear</button>
+      <button id="clearBtn" class="btn-large purple waves-effect waves-dark hoverable">Clear</button>
     </div>
   </div>
       <script
