@@ -5,8 +5,7 @@ gi*{
     font-family: sans-serif;
 }
 body{
-    display: flex;
-    justify-content: center;
+    display: block;
     align-items: center;
     min-height: 100vh;
     background: #c7c7c7;  
@@ -14,25 +13,20 @@ body{
 .wrapper1, .wrapper2 {
     width: 400px;
     height: 400px;
-    position: absolute;
+
 }
 /* change wrapper here to move the wheels */
 .wrapper1 {
     top: 10%;
-    left: 10%;
+    left: 0;
+    position: relative;
 }
 .wrapper2 {
     top: 10%;
-    left: 60%;
-}
-.container1 .container2 {
+    left: 20%;
     position: relative;
-    width: 500px;
-    height: 500px;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
 }
+
 .spinner1, .spinner2 {
     position: absolute;
     width: 60px;
@@ -44,6 +38,7 @@ body{
     justify-content: center;
     align-items: center;
     border: 2px solid rgba(0,0,0,0.75);
+    cursor: pointer;
     user-select: none;
     top: 50%;
     left: 50%;
@@ -94,6 +89,12 @@ body{
     0 0 0 4px #333;
     transition: transform;
 }
+
+.wheel-right, .wheel-left {
+    display: block;
+}
+
+
 .genre, .cuisine {
     position: absolute;
     width: 50%;
