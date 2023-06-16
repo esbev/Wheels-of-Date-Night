@@ -1,8 +1,10 @@
-# Wheels of Date Night - Project 1
+# Wheels of Date Night 
+
+![logo](assets/images/WoDN-Logo%20-%20small.png)
 
 ## Description
 
-The Wheels of Date Night provide a user friendly way to quickly get new ideas for food and movies for any style of date. The Wheels of Date Night is easy and fun to use; the user needs to simply click the spin button and the fun begins. Two wheels are presented and once the spin button is clicked the wheels will spin. One wheel has random food cuisines and the other wheel has random film genres. Once the wheels come to a stop there is a pointer that will indicate to the user which choice each wheel has chosen. Below the wheels are 5 dishes and 5 movies generated in a list for the user to choose from. The user only needs to choose a dish and a movie from the lists and click the save button. This will save the user's input then list the 2 choices combined as a previous date. The food and movie lists will get cleared and the wheels are ready for another spin if the user desires. All previously saved dates will auto populate in the "Previous dates list" on user return to the site. You just took a simple dinner and a movie and made it exciting. Good luck and enjoy your date.
+Wheels of Date Night provides a user friendly way to quickly get new ideas for food and movies for any style of date. Wheels of Date Night is easy and fun to use; the user needs to simply click the spin button and the fun begins. Two wheels are presented and once the spin button is clicked the wheels will spin. One wheel has food cuisines and the other wheel has film genres. Once the wheels come to a stop there is an indicator to show the user what each wheel has chosen. Below the wheels are 5 dishes and 5 movies generated in a list for the user to choose from. The user only needs to choose a dish and a movie from the lists and click the save button. This will save the user's choices then list the combination in date history. The food and movie lists will get cleared and the wheels are ready for another spin if the user desires. All previously saved dates will auto populate in the "dating history" on user return to the site. You just took a simple dinner and a movie and made it exciting. Good luck and enjoy your date.
 
 ## Table of Contents
 - [Website Preview](#website-preview)
