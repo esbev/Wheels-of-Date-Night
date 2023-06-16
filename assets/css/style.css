@@ -206,3 +206,15 @@ body{
     }
 
 }
+#choice-text {
+    font-size: 5rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+ 
+#date-text {
+    font-size: 5rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#history-title{
+    font-size: 3rem;
+}
