@@ -23,7 +23,7 @@
     <div class="section">
       <div class="row">
         <div class="col s12 m6 l6">
-          <div class="wheel-left">
+          <!-- <div class="wheel-left"> -->
             <div class="wrapper1">
                 <div class="spinner1"></div>
                 <div class="wheel1">
@@ -59,58 +59,58 @@
                   </div>
                 </div>
             </div>
-          </div>
+          <!-- </div> -->
         </div>
           <div class="col s12 m6 l6">
-            <div class="wheel-right">
+            <!-- <div class="wheel-right"> -->
               <div class="wrapper2">
                   <div class="spinner2"></div>
                   <div class="wheel2">
-                    <div class="genre" style="--i:1;--clr:#db7093;">
+                    <div class="genre" style="--i:1;--clr:#b667d8;">
                       <span>Horror</span>
                     </div>
-                    <div class="genre" style="--i:2;--clr:#20b2aa;">
+                    <div class="genre" style="--i:2;--clr:#000fe0;">
                       <span>Action</span>
                     </div>
-                    <div class="genre" style="--i:3;--clr:#daa520;">
+                    <div class="genre" style="--i:3;--clr:#ff7f50;">
                       <span>Comedy</span>
                     </div>
-                    <div class="genre" style="--i:4;--clr:#ff340f;">
+                    <div class="genre" style="--i:4;--clr:#d63e92;">
                       <span>Romance</span>
                     </div>
-                    <div class="genre" style="--i:5;--clr:#4169e1;">
+                    <div class="genre" style="--i:5;--clr:#3cb371;">
                       <span>Sci-Fi</span>
                     </div>
-                    <div class="genre" style="--i:6;--clr:#3cb371;">
+                    <div class="genre" style="--i:6;--clr:#4169e1;">
                       <span>Thriller</span>
                     </div>
-                    <div class="genre" style="--i:7;--clr:#d63e92;">
+                    <div class="genre" style="--i:7;--clr:#ff340f;">
                       <span>Adventure</span>
                     </div>
-                    <div class="genre" style="--i:8;--clr:#ff7f50;">
+                    <div class="genre" style="--i:8;--clr:#daa520;">
                       <span>Family</span>
                     </div>
-                    <div class="genre" style="--i:9;--clr:#000fe0;">
+                    <div class="genre" style="--i:9;--clr:#20b2aa;">
                       <span>Mystery</span>
                     </div>
-                    <div class="genre" style="--i:10;--clr:#b667d8;">
+                    <div class="genre" style="--i:10;--clr:#db7093;">
                       <span>Drama</span>
                     </div>
                   </div>
               </div>
-            </div>
+            <!-- </div> -->
           </div>
         </div>
       </div>
       <div class="center">
         <!-- TO DO: center spin button between wheels -->
-        <a id="spinBtn" class="btn-large purple waves-effect waves-dark hoverable">SPIN</a>
+        <a id="spinBtn" class="btn-large orange waves-effect waves-dark hoverable">SPIN</a>
       </div>
 
       <!-- column 1 for dinners -->
       <div class="section">
         <div class="row center-align">
-          <div class="col s12 m6 6 center-align">
+          <div class="col s12 m6 6 left-align">
             <label id="dish-label">Choose Dish</label>
             <form id="food-list" class="food-list">
               <p><label><input type="radio" disabled /><span>_______________</span></label></p></input>
@@ -123,7 +123,7 @@
           <!-- column 2 for accept button -->
 
           <!-- column 3 for movies -->
-          <div class="col s12 m6 6">
+          <div class="col s12 m6 6 left-align">
             <label id="movie-label">Choose Movie</label>
             <form id="movie-list" class="movie-list">
               <p><label><input type="radio" disabled /><span>_______________</span></input></label></p>
@@ -134,7 +134,7 @@
             </form>
           </div>
           <div class="col s12 12 center-align">
-            <button id="acceptBtn" class="btn-large purple waves-effect waves-dark hoverable disabled">Accept</button>
+            <button id="acceptBtn" class="btn-large waves-effect waves-dark hoverable disabled">Accept</button>
           </div>
         </div>
       </div>
@@ -145,7 +145,7 @@
             <h4 id="history-title" class="header center">Dating History</h4>
           </div>
 
-          <table>
+          <table class="striped">
             <thead>
               <tr>
                 <th id="dinner-title">Dinner</th>
@@ -156,7 +156,7 @@
             <tbody id="saved-list"></tbody>
           </table>
           <div class="center">
-          <button id="clearBtn" class="btn-large purple waves-effect waves-dark hoverable">Clear</button>
+          <button id="clearBtn" class="btn-small purple waves-effect waves-dark hoverable">Clear</button>
         </div>
       </div>
     </div>
