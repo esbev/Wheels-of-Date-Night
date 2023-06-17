@@ -11,8 +11,8 @@ function fetchFood(cuisineID) {
   fetch(foodApi)
     .then(function(response) {
       if (response.status === 404) {
-          console.log("404");
-          return;
+        location.replace("404.html");
+        return;
       } else {
           return response.json();
       }
@@ -59,8 +59,8 @@ function fetchMovies(genreID) {
   fetch(movieApi)
   .then(function(response) {
     if (response.status === 404) {
-        console.log("404");
-        return;
+      location.replace("404.html");
+      return;
     } else {
         return response.json();
     }
@@ -188,7 +188,7 @@ var isEnabled;
 var isEnabled2;
 
 function spinWheel1() {
-  let randomDegree = Math.floor(Math.random() * (355 - 0 + 1) + 0);
+  let randomDegree = Math.floor(Math.random() * 355);
   var degreeAccumulator = 0;
   let rotationInterval = window.setInterval(() => {
     degreeAccumulator = degreeAccumulator + resultValue;    
@@ -219,7 +219,7 @@ const valueGenerator = (angleValue) => {
 };
 
 function spinWheel2() {
-  let randomDegree = Math.floor(Math.random() * (355 - 0 + 1) + 0);
+  let randomDegree = Math.floor(Math.random() * 355);
   var degreeAccumulator = 0;
   let rotationInterval = window.setInterval(() => {
     degreeAccumulator = degreeAccumulator + resultValue2;    
