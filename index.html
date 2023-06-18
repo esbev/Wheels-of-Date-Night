@@ -23,7 +23,6 @@
     <div class="section">
       <div class="row">
         <div class="col s12 m6 l6">
-          <!-- <div class="wheel-left"> -->
             <div class="wrapper1">
                 <div class="spinner1"></div>
                 <div class="wheel1">
@@ -59,10 +58,8 @@
                   </div>
                 </div>
             </div>
-          <!-- </div> -->
         </div>
           <div class="col s12 m6 l6">
-            <!-- <div class="wheel-right"> -->
               <div class="wrapper2">
                   <div class="spinner2"></div>
                   <div class="wheel2">
@@ -98,16 +95,13 @@
                     </div>
                   </div>
               </div>
-            <!-- </div> -->
           </div>
         </div>
       </div>
       <div class="center">
-        <!-- TO DO: center spin button between wheels -->
         <a id="spinBtn" class="btn-large orange waves-effect waves-dark hoverable">SPIN</a>
       </div>
 
-      <!-- column 1 for dinners -->
       <div class="section">
         <div class="row center-align">
           <div class="col s12 m6 6 left-align">
@@ -120,9 +114,7 @@
               <p><label><input type="radio" disabled /><span>_______________</span></label></p></input>
             </form>
           </div>
-          <!-- column 2 for accept button -->
 
-          <!-- column 3 for movies -->
           <div class="col s12 m6 6 left-align">
             <label id="movie-label">Choose Movie</label>
             <form id="movie-list" class="movie-list">
@@ -138,26 +130,23 @@
           </div>
         </div>
       </div>
-      <!-- header for dating history table -->
       <div class="section">
-        <div class="section">
-          <div class="header">
-            <h4 id="history-title" class="header center">Dating History</h4>
-          </div>
-
-          <table class="striped">
-            <thead>
-              <tr>
-                <th id="dinner-title">Dinner</th>
-                <th id="movie-title">Movie</th>
-              </tr>
-            </thead>
-
-            <tbody id="saved-list"></tbody>
-          </table>
-          <div class="center">
-          <button id="clearBtn" class="btn-small purple waves-effect waves-dark hoverable">Clear</button>
+        <div class="header">
+          <h4 id="history-title" class="header center">Dating History</h4>
         </div>
+
+        <table class="striped">
+          <thead class="table-head">
+            <tr>
+              <th id="dinner-title">Dinner</th>
+              <th id="movie-title">Movie</th>
+            </tr>
+          </thead>
+
+          <tbody id="saved-list"></tbody>
+        </table>
+        <div class="center">
+        <button id="clearBtn" class="btn-small purple waves-effect waves-dark hoverable">Clear</button>
       </div>
     </div>
   </div>

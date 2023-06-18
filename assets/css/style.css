@@ -9,7 +9,12 @@ body{
     align-items: center;
     min-height: 100vh;
     min-width: 768px;
+    /* max-width: 1500px; */
     background: #c7c7c7;
+}
+.section, .header, .table-head, #history-title, #dinner-title, #movie-title {
+    margin: 0;
+    padding: 0;
 }
 .wrapper1, .wrapper2 {
     width: 400px;
@@ -210,7 +215,7 @@ body{
     color:#018d40;
 }
 #acceptBtn {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 #dinner-title {
     text-shadow: 1px 3px .1em black;
