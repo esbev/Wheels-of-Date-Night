@@ -30,7 +30,9 @@ Wheels of Date Night provides a user friendly way to quickly get new ideas for f
 
 [Wheels of Date Night](https://esbev.github.io/project-1-collab/)
 
-[![name](assets/images/SS.jpg)](https://esbev.github.io/project-1-collab/)
+![name](assets/images/SS.jpg)
+![name](assets/images/SSmed.jpg)
+![name](assets/images/SSsmall.jpg)
 
 ## Concept
 
@@ -83,7 +85,7 @@ Wheels of Date Night provides a user friendly way to quickly get new ideas for f
 
 - ### Challenges Encountered
 
-    - #### The Food API
+    - #### Food API
 
     - #### Wheel value capture
 
@@ -93,7 +95,7 @@ Wheels of Date Night provides a user friendly way to quickly get new ideas for f
 
 In future development we can expand the choices of cuisines and genres presented. We can blend cuisines and blend genres to get even more narrowed choices for food and movies.
 
-We could use geolocation to add the user's current locatoin to present local restaurants based on the dish selected, and local theaters playing the movie selected.
+We could use geolocation to add the user's current location to present local restaurants based on the dish selected, and local theaters playing the movie selected.
 
 Bring in more APIs to add parameters to the spontaneous date night experience. Such as local businesses with games, action oriented activities like wall climbing, go-kart racing, etc. We could include parameters for events happening locally like festivals, wine tasting, music events, sports games, etc.
 
@@ -101,17 +103,21 @@ Bring in more APIs to add parameters to the spontaneous date night experience. S
 
 - ### Resources
 
-NOTE: Click on a thumbnail to view source
+    - #### Spinning Wheels Reference
 
-- #### Materialize CSS Framework
+        - (https://www.youtube.com/watch?v=ETFdNsBP04c)
 
-    [![name](assets/images/materialize.jpg)](https://materializecss.com//)
+        - (https://www.youtube.com/watch?v=F3-lK_-PQr0)
+
+    - #### Materialize CSS Framework
+
+        [![name](assets/images/materialize.jpg)](https://materializecss.com//)
 
 - ## Special Thanks
 
     Thanks goes out to all the instructors and teacher assistants for their clear instruction and prompt and thorough answers to all our questions.
 
-    Also, thanks to the development team. Each member brought fantastic ideas and great skills to the make this dream a reality.
+    Also, thanks to the development team. Each member brought fantastic ideas and great skills to make this dream a reality.
 
 ## License
 
