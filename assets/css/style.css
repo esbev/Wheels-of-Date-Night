@@ -2,7 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Oxygen', sans-serif;
+}
+
+header {
+    padding: 10px;
 }
 
 body {
@@ -11,20 +15,16 @@ body {
     min-height: 100vh;
     min-width: 768px;
     background: linear-gradient(rgba(255, 0, 0, 0.488), rgb(228, 187, 83));
-    border: 20px rgb(238, 43, 150) double;
+    border: 20px rgb(242, 17, 140) double;
 }
     
 label, td {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
     color: black;
 }
 
-td {
-    text-align: center;
-}
-
-.section, .header, .table-head, #history-title, #dinner-title, #movie-title {
+.section, .header, .table-head {
     margin: 0;
     padding: 0;
 }
@@ -40,7 +40,7 @@ td {
 }
 
 .wrapper2 {
-    left: 25%;
+    left: 35%;
 }
 
 .spinner1, .spinner2 {
@@ -100,8 +100,6 @@ td {
 
 .wheel1, .wheel2 {
     position: absolute;
-    /* top: 10; */
-    /* left: -50%; */
     width: 100%;
     height: 100%;
     background: #333;
@@ -143,13 +141,16 @@ td {
 }
 
 @media screen and (max-width: 992px) {
+
+
     .wrapper1, .wrapper2 {
+        align-content: center;
         width: 300px;
         height: 300px;   
     }
     .genre span, .cuisine span {
         font-size: 0.45cm;
-        font-weight: 600;
+        font-weight: 700;
         text-shadow: 1px 2px .1em black;
     }
     .spinner1, .spinner2 {
@@ -187,12 +188,13 @@ td {
     .wrapper1, .wrapper2 {
         width: 200px;
         height: 200px;
-        margin: 5px;  
-        left: 25%;
+        margin: 5px;
+        left: 15%;  
+
     }
     .genre span, .cuisine span {
         font-size: 0.30cm;
-        font-weight: 500;
+        font-weight: 700;
         text-shadow: 1px 2px .1em black;
     }
     .spinner1, .spinner2 {
@@ -225,28 +227,45 @@ td {
         box-shadow: 0 0 0 2px #333,
         0 0 0 2px #333;
     }
+    .table-responsive tbody td {
+        display: block;
+        text-align: left;
+    }
+  
+    .table-responsive tbody td:before {
+        content: attr(data-label);
+        display: inline-block;
+        font-weight: bold;
+        margin-right: 5px;
+    }
+    .col {
+        display: inline-block;
+        align-content: center
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper1, .wrapper2 {
+        left: 33%;  
+
+    }
 }
 
 #history-title {
-    color: #4169e1;
+    color:rgb(242, 17, 140);
     text-shadow: 1.5px 3px .1em black;
-    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-weight: 800;
+    font-weight: 700;
     font-size: 3rem;
 }
 
-#dish-label, #movie-label {
-    font-size: 1.5rem;
-}
-
 #dish-label {
-    color: #4169e1;
+    color: #0ed7fa;
     text-shadow: 1px 3px .1em black;
     font-size: 2rem;
 }
 
 #movie-label {
-    color:#018d40;
+    color:#e60f0f;
     text-shadow: 1px 3px .1em black;
     font-size: 2rem;
 }
@@ -256,13 +275,13 @@ td {
 }
 
 #dinner-title {
+    color: #0ed7fa;
     text-shadow: 1px 3px .1em black;
     font-size: 2rem;
-    color:#ff7f50;  
 }
 
 #movie-title {
+    color:#e60f0f;
     text-shadow: 1px 3px .1em black;
     font-size: 2rem;
-    color: #d63e92;
 }

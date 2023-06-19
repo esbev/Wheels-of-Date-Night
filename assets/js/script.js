@@ -4,6 +4,7 @@ function initialize() {
   loadPreviousDates();
 }
 
+//---food API + fetch&pop 
 function fetchFood(cuisineID) {
   var spoonApiKey = "7a94090b0a5346439ced2e2654e068d9";
   var foodList = 5;
@@ -52,6 +53,7 @@ function populateFoodList(food) {
   $("#acceptBtn").removeClass("disabled");
 }
 
+//---movie API + fetch&pop 
 function fetchMovies(genreID) {
   const TMDBApiKey = "2f83b0344ec435557ea893d6df97bbfa";
   var movieListPage = Math.ceil(Math.random() * 5);
@@ -103,6 +105,7 @@ function populateMovieList(movies) {
   $("#acceptBtn").removeClass("disabled");
 }
 
+//---creating list elements from value of food and movie options + saving populated choices to localStorage
 function acceptAndSave() {
   var selectedFood = ($('input[name=title]:checked').val());
   var selectedMovie = ($('input[name=movie]:checked').val());
@@ -132,23 +135,24 @@ function resetLists() {
   }
 }
 
+//---clear button functionality
 function clear() {
   $("#saved-list").empty();
   theDate = [];
   localStorage.clear();
 }
 
+//---displaying saved options from localStorage to the page
 function loadPreviousDates() {
   var previousDates = JSON.parse(window.localStorage.getItem("dates"));
 
   for (i in previousDates) {
-    // var addDateEl = '<p>' + previousDates[i].dish + ', ' + previousDates[i].movie + '</p>';
     var addDateEl = '<tr><td>' + previousDates[i].dish + '</td><td>' + previousDates[i].movie + '</td></tr>';
     $("#saved-list").append(addDateEl);
   }
 }
 
-///-----------------------------wheels and spinning
+///---wheels and spinning + value generator
 let wheel1 = document.querySelector('.wheel1');
 let wheel2 = document.querySelector('.wheel2');
 var wheelCuisine = "";

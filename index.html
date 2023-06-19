@@ -6,12 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
   <!--Import materialize.css-->
   <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.0.1-alpha/dist/css/materialize.min.css">
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
   <title>WoDN: Dinner and a Movie generator</title>
-
 </head>
 
 <body>
@@ -19,142 +21,149 @@
     <img src="assets/images/WoDN-LogoMedium.png">
   </header>
 
+<!-- container for wheels and spin button -->
   <div class="container">
     <div class="section">
       <div class="row">
         <div class="col s12 m6">
-            <div class="wrapper1">
-                <div class="spinner1"></div>
-                <div class="wheel1">
-                  <div class="cuisine" style="--i:1;--clr:#db7093;">
-                    <span>Italian</span>
-                  </div>
-                  <div class="cuisine" style="--i:2;--clr:#20b2aa;">
-                    <span>American</span>
-                  </div>
-                  <div class="cuisine" style="--i:3;--clr:#daa520;">
-                    <span>Thai</span>
-                  </div>
-                  <div class="cuisine" style="--i:4;--clr:#ff340f;">
-                    <span>Chinese</span>
-                  </div>
-                  <div class="cuisine" style="--i:5;--clr:#4169e1;">
-                    <span>Caribbean</span>
-                  </div>
-                  <div class="cuisine" style="--i:6;--clr:#3cb371;">
-                    <span>Greek</span>
-                  </div>
-                  <div class="cuisine" style="--i:7;--clr:#d63e92;">
-                    <span>Spanish</span>
-                  </div>
-                  <div class="cuisine" style="--i:8;--clr:#ff7f50;">
-                    <span>French</span>
-                  </div>
-                  <div class="cuisine" style="--i:9;--clr:#000fe0;">
-                    <span>Japanese</span>
-                  </div>
-                  <div class="cuisine" style="--i:10;--clr:#b667d8;">
-                    <span>Indian</span>
-                  </div>
-                </div>
-            </div>
-        </div>
-          <div class="col s12 m6">
-              <div class="wrapper2">
-                  <div class="spinner2"></div>
-                  <div class="wheel2">
-                    <div class="genre" style="--i:1;--clr:#b667d8;">
-                      <span>Horror</span>
-                    </div>
-                    <div class="genre" style="--i:2;--clr:#000fe0;">
-                      <span>Action</span>
-                    </div>
-                    <div class="genre" style="--i:3;--clr:#ff7f50;">
-                      <span>Comedy</span>
-                    </div>
-                    <div class="genre" style="--i:4;--clr:#d63e92;">
-                      <span>Romance</span>
-                    </div>
-                    <div class="genre" style="--i:5;--clr:#3cb371;">
-                      <span>Sci-Fi</span>
-                    </div>
-                    <div class="genre" style="--i:6;--clr:#4169e1;">
-                      <span>Thriller</span>
-                    </div>
-                    <div class="genre" style="--i:7;--clr:#ff340f;">
-                      <span>Adventure</span>
-                    </div>
-                    <div class="genre" style="--i:8;--clr:#daa520;">
-                      <span>Family</span>
-                    </div>
-                    <div class="genre" style="--i:9;--clr:#20b2aa;">
-                      <span>Mystery</span>
-                    </div>
-                    <div class="genre" style="--i:10;--clr:#db7093;">
-                      <span>Drama</span>
-                    </div>
-                  </div>
+          <div class="wrapper1">
+            <div class="spinner1"></div>
+            <div class="wheel1">
+              <div class="cuisine" style="--i:1;--clr:#db7093;">
+                <span>Italian</span>
               </div>
+              <div class="cuisine" style="--i:2;--clr:#20b2aa;">
+                <span>American</span>
+              </div>
+              <div class="cuisine" style="--i:3;--clr:#daa520;">
+                <span>Thai</span>
+              </div>
+              <div class="cuisine" style="--i:4;--clr:#ff340f;">
+                <span>Chinese</span>
+              </div>
+              <div class="cuisine" style="--i:5;--clr:#4169e1;">
+                <span>Caribbean</span>
+              </div>
+              <div class="cuisine" style="--i:6;--clr:#3cb371;">
+                <span>Greek</span>
+              </div>
+              <div class="cuisine" style="--i:7;--clr:#d63e92;">
+                <span>Spanish</span>
+              </div>
+              <div class="cuisine" style="--i:8;--clr:#ff7f50;">
+                <span>French</span>
+              </div>
+              <div class="cuisine" style="--i:9;--clr:#000fe0;">
+                <span>Japanese</span>
+              </div>
+              <div class="cuisine" style="--i:10;--clr:#b667d8;">
+                <span>Indian</span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="center">
-        <a id="spinBtn" class="btn-large orange waves-effect waves-dark hoverable">SPIN</a>
-      </div>
-
-      <div class="section">
-        <div class="row center-align">
-          <div class="col s12 m6 center-align">
-            <label id="dish-label">Choose Dish</label>
-            <form id="food-list" class="food-list">
-              <p><label><input type="radio" disabled /><span>_______________</span></label></p></input>
-              <p><label><input type="radio" disabled /><span>_______________</span></label></p></input>
-              <p><label><input type="radio" disabled /><span>_______________</span></label></p></input>
-              <p><label><input type="radio" disabled /><span>_______________</span></label></p></input>
-              <p><label><input type="radio" disabled /><span>_______________</span></label></p></input>
-            </form>
-          </div>
-
-          <div class="col s12 m6 center-align">
-            <label id="movie-label">Choose Movie</label>
-            <form id="movie-list" class="movie-list">
-              <p><label><input type="radio" disabled /><span>_______________</span></input></label></p>
-              <p><label><input type="radio" disabled /><span>_______________</span></input></label></p>
-              <p><label><input type="radio" disabled /><span>_______________</span></input></label></p>
-              <p><label><input type="radio" disabled /><span>_______________</span></input></label></p>
-              <p><label><input type="radio" disabled /><span>_______________</span></input></label></p>
-            </form>
-          </div>
-          <div class="col s12 center-align">
-            <button id="acceptBtn" class="btn-large waves-effect waves-dark hoverable disabled">Accept</button>
+        <div class="col s12 m6">
+          <div class="wrapper2">
+            <div class="spinner2"></div>
+            <div class="wheel2">
+              <div class="genre" style="--i:1;--clr:#b667d8;">
+                <span>Horror</span>
+              </div>
+              <div class="genre" style="--i:2;--clr:#000fe0;">
+                <span>Action</span>
+              </div>
+              <div class="genre" style="--i:3;--clr:#ff7f50;">
+                <span>Comedy</span>
+              </div>
+              <div class="genre" style="--i:4;--clr:#d63e92;">
+                <span>Romance</span>
+              </div>
+              <div class="genre" style="--i:5;--clr:#3cb371;">
+                <span>Sci-Fi</span>
+              </div>
+              <div class="genre" style="--i:6;--clr:#4169e1;">
+                <span>Thriller</span>
+              </div>
+              <div class="genre" style="--i:7;--clr:#ff340f;">
+                <span>Adventure</span>
+              </div>
+              <div class="genre" style="--i:8;--clr:#daa520;">
+                <span>Family</span>
+              </div>
+              <div class="genre" style="--i:9;--clr:#20b2aa;">
+                <span>Mystery</span>
+              </div>
+              <div class="genre" style="--i:10;--clr:#db7093;">
+                <span>Drama</span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="section">
-        <div class="header">
-          <h4 id="history-title" class="header center">Dating History</h4>
-        </div>
-
-        <table class="striped">
-          <thead class="table-head">
-            <tr>
-              <th class="center-align" id="dinner-title">Dinner</th>
-              <th class="center-align" id="movie-title">Movie</th>
-            </tr>
-          </thead>
-
-          <tbody id="saved-list"></tbody>
-        </table>
-        <div class="center">
-        <button id="clearBtn" class="btn-small purple waves-effect waves-dark hoverable">Clear</button>
       </div>
     </div>
+    <div class="center">
+      <a id="spinBtn" class="btn-large orange waves-effect waves-dark hoverable">SPIN</a>
+    </div>
+
+<!-- section for food and movie options with accept button -->
+    <div class="section">
+      <div class="row center-align">
+        <div class="col s12 m6 center-align">
+          <label id="dish-label">Choose Dish</label>
+          <form id="food-list" class="food-list">
+            <p><label><input type="radio" disabled /><span>_______________</span></input></label></p>
+            <p><label><input type="radio" disabled /><span>_______________</span></input></label></p>
+            <p><label><input type="radio" disabled /><span>_______________</span></input></label></p>
+            <p><label><input type="radio" disabled /><span>_______________</span></input></label></p>
+            <p><label><input type="radio" disabled /><span>_______________</span></input></label></p>
+          </form>
+        </div>
+
+        <div class="col s12 m6 center-align">
+          <label id="movie-label">Choose Movie</label>
+          <form id="movie-list" class="movie-list">
+            <p><label><input type="radio" disabled /><span>_______________</span></input></label></p>
+            <p><label><input type="radio" disabled /><span>_______________</span></input></label></p>
+            <p><label><input type="radio" disabled /><span>_______________</span></input></label></p>
+            <p><label><input type="radio" disabled /><span>_______________</span></input></label></p>
+            <p><label><input type="radio" disabled /><span>_______________</span></input></label></p>
+          </form>
+        </div>
+        <div class="col s12 center-align">
+          <button id="acceptBtn" class="btn-large waves-effect waves-dark hoverable disabled">Accept</button>
+        </div>
+      </div>
+
+<!-- table for dating history  -->
+      <div class="row">
+        <div class="header col s12 center-align">
+          <h4 id="history-title" class="header center">Dating History</h4>
+        </div>
+      
+        <div class="col s12 center-align">
+          <div class="table-responsive">
+            <table class="striped centered">
+              <thead class="table-head">
+                <tr>
+                  <th class="col s12 m6 l6" id="dinner-title">Dinner</th>
+                  <th class="col s12 m6 l6" id="movie-title">Movie</th>
+                </tr>
+              </thead>
+              <tbody id="saved-list"></tbody>
+            </table>
+          </div>
+        </div>
+      
+        <div class="col s12 center-align">
+          <button id="clearBtn" class="btn-large pink waves-effect waves-dark hoverable">Clear</button>
+        </div>
+      </div>
+
+    </div>
+    
   </div>
-</div>
-  <script
-    src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.0.1-alpha/dist/js/materialize.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.0.1-alpha/dist/js/materialize.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="./assets/js/script.js"></script>
 
