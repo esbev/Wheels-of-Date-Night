@@ -1,10 +1,22 @@
 # Wheels of Date Night 
 
-![logo](assets/images/WoDN-Logo%20-%20small.png)
+<p align="center">
+  <img src="./assets/images/WoDN-LogoMedium.png">
+</p>
 
 ## Description
 
-Wheels of Date Night provides a user friendly way to quickly get new ideas for food and movies for any style of date. Wheels of Date Night is easy and fun to use; the user needs to simply click the spin button and the fun begins. Two wheels are presented and once the spin button is clicked the wheels will spin. One wheel has food cuisines and the other wheel has film genres. Once the wheels come to a stop there is an indicator to show the user what each wheel has chosen. Below the wheels are 5 dishes and 5 movies generated in a list for the user to choose from. The user only needs to choose a dish and a movie from the lists and click the save button. This will save the user's choices then list the combination in date history. The food and movie lists will get cleared and the wheels are ready for another spin if the user desires. All previously saved dates will auto populate in the "dating history" on user return to the site. You just took a simple dinner and a movie and made it exciting. Good luck and enjoy your date.
+Wheels of Date Night provide a user-friendly experience to quickly get unique options for food and movies as viable date night ideas. The application is easy and fun to use. Simply click the spin button and the fun begins. 
+
+Two wheels are presented and once the spin button is clicked, both will randomly rotate to pick a food cuisine and movie genre. When the wheels come to a stop, a pointer will indicate to the user which choice each wheel has chosen.
+
+Below the wheels, the user is presented with 5 food options from the cuisine type and 5 movies from the genre list. The user only needs to choose a dish and a movie from the options and click the accept button. Doing so will save the user's input then list the 2 choices combined as a previous date. 
+
+The option to clear previous food and movie lists is available by use of the clear button below. All previously saved dates will auto populate in the “Dating History" when the user returns to the app. 
+
+You just took a simple dinner and a movie and made it exciting. Good luck and enjoy your date.
+
+
 
 ## Table of Contents
 - [Website Preview](#website-preview)
@@ -14,11 +26,6 @@ Wheels of Date Night provides a user friendly way to quickly get new ideas for f
         - [Motivation / One-minute-pitch](#motivation--one-minute-pitch)
 - [Process](#process)
     - [Technologies Used](#technologies-used)
-    - [Tasks](#tasks)
-    - [Challenges Encountered](#challenges-encountered)
-        - [The Food API](#the-food-api)
-        - [Wheel value capture](#wheel-value-capture)
-    - [Successes in Development](#successes-in-development)
 - [Future Development](#future-development)
 - [Credits](#credits)
 - [Resources](#resources)
@@ -28,11 +35,11 @@ Wheels of Date Night provides a user friendly way to quickly get new ideas for f
 
 ## Website Preview
 
-[Wheels of Date Night](https://esbev.github.io/project-1-collab/)
+[Link to our Deployed Page](https://esbev.github.io/project-1-collab/)
 
-![name](assets/images/SS.jpg)
-![name](assets/images/SSmed.jpg)
-![name](assets/images/SSsmall.jpg)
+![name](assets/images/WoDN-fullpage.png)
+![name](assets/images/WoDN-(iPad%20Mini).png)
+![name](assets/images/WoDN-(Samsung%20Galaxy%20S8%2B).png)
 
 ## Concept
 
@@ -41,30 +48,34 @@ Wheels of Date Night provides a user friendly way to quickly get new ideas for f
         AS A romantic couple
         I WANT to get unique ideas for dinner and a movie
         SO THAT I can plan a quick and spontaneous date night
-        GIVEN a pair of spinner wheels and a spin button
+
 
 - ### Acceptance Criteria
 
+        GIVEN a pair of spinner wheels and a spin button
         WHEN I click on the spin button
-        THEN I am presented with two spinning wheels
+        THEN I both wheels begin to spin
         WHEN I view the wheels stop
-        THEN I am presented with a random cuisine type and a random film genre
+        THEN I am presented with a random cuisine type and a random film genre.
         WHEN I am presented with a random cuisine type and a random film genre
-        THEN I am automatically presented with 5 random dishes from the cuisine type and 5 random movies from the film genre
+        THEN I am automatically presented with 5 random dishes from the cuisine type and 5 random movies from the film genre.
         WHEN I click on a dish and a movie
-        THEN I am presented with a save button
-        WHEN I click the save button
-        THEN I am presented with a list of saved date nights with my food and movie selections, and the dish and movie lists clear
-        WHEN I comeback to the page
-        THEN I can view all previously saved date nights
+        THEN I am presented with an enabled Accept button.
+        WHEN I click the Accept button
+        THEN I am presented with a list of saved date nights with my food and movie selections along with a clear button to clear previous entries.
+        WHEN I refresh the page
+        THEN I can view all previously saved date nights.
 
-- ### Motivation and Development
 
-    - #### Motivation / One-minute-pitch
+- ### Motivation/Development
 
-            Everyone has their comfort food, their regular dishes they cook, their regular restaurants, their favorite items on a menu they choose every single time, their regular TV shows, their regular channels they watch, those same old movies they watch again and again and again. Unfortunately date nights are not immune to these default parameters as well.
+    - #### One-minute-pitch
 
-            But nevertheless you find yourself again with a evening alone with your signifcant other but you don't have time to plan a big date. So it looks like your going to have to settle for another thoughtless, monotonous, boring, tasteless "Dinner and a Movie."
+            Everyone has their favorite comfort food, their go-to cooking recipes, their regular restaurants, and even their favorite items on a menu that they choose every single time.
+
+            They also have their regular TV shows, binging the same show over and over to the point where you know the script by heart. Movies wouldn’t just be a one time experience, but a WEEKLY routine. We are creatures of habit and unfortunately date nights are not immune to these familiar feelings of excitement becoming commonplace and bland.
+
+            But nevertheless, you find yourself again on an evening alone with your significant other with no big plans for an exciting date. It looks like you’re just going to have to settle for another thoughtless, monotonous, boring, and tasteless "Dinner and a Movie”.
 
             We take the thoughtless and think for you.
 
@@ -74,34 +85,34 @@ Wheels of Date Night provides a user friendly way to quickly get new ideas for f
 
             We take the tasteless and spice it up.
 
-            If you want to plan an elaborate date night, then we suggest you plan ahead. But if you don't have time for that, then let us take you and your significant other to the "Wheels of Date Night."
+            If you want to plan an elaborate date night, then we suggest you plan ahead. But if you don't have the time for that, then let us take the worry out of the situation.
 
+            Our collaborative project has brought us to solve a problem that a lot of people experience. We propose a solution; through discovering a new dish and enjoying a potential hidden gem of a film, we have created:
 
-## Process
+            “Wheels of Date Night!”
 
-- ### Technologies Used
+- ## Technologies Used
 
-- ### Tasks
+    - ### Spoonacular API 
+    - ### themoviedb API
+    - ### Materialize CSS
 
-- ### Challenges Encountered
+- ## Future Development
 
-    - #### Food API
+    - ### By taking in latitude and longitude of the user’s current location, we could expand our food location options to include local restaurants and theaters based on the dish and movie selected.
+ 
+    - ### Yelp API would be a beneficial addition to the application by not only providing the location but also reviews. Local businesses with games and leisurely activities like sports, museums, and music performances are awesome date night ideas. For future development, we could include parameters for events happening locally within your area like festivals, painting, and other group-oriented happenings.
 
-    - #### Wheel value capture
-
-- ### Successes in Development
-
-## Future Development
-
-In future development we can expand the choices of cuisines and genres presented. We can blend cuisines and blend genres to get even more narrowed choices for food and movies.
-
-We could use geolocation to add the user's current location to present local restaurants based on the dish selected, and local theaters playing the movie selected.
-
-Bring in more APIs to add parameters to the spontaneous date night experience. Such as local businesses with games, action oriented activities like wall climbing, go-kart racing, etc. We could include parameters for events happening locally like festivals, wine tasting, music events, sports games, etc.
-
-## Credits
+- ## Credits
 
 - ### Resources
+    - #### Spoonacular API
+
+        - (https://spoonacular.com/food-api)
+
+    - #### themoviedb API
+
+        - (https://developer.themoviedb.org/reference/intro/getting-started)
 
     - #### Spinning Wheels Reference
 
@@ -115,9 +126,9 @@ Bring in more APIs to add parameters to the spontaneous date night experience. S
 
 - ## Special Thanks
 
-    Thanks goes out to all the instructors and teacher assistants for their clear instruction and prompt and thorough answers to all our questions.
+    - ### Thanks goes out to all the instructors and teacher assistants for their clear instruction and prompt and thorough answers to all our questions.
 
-    Also, thanks to the development team. Each member brought fantastic ideas and great skills to make this dream a reality.
+    - ### Also, thanks to the development team. Each member brought fantastic ideas and great skills to make this dream a reality.
 
 ## License
 
